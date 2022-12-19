@@ -14,6 +14,15 @@ app.use(
   })
 );
 
+app.post("/login", (req, res) => {
+  const username = req.body.username;
+  const password = req.body.password;
+
+  pool.query("INSERT INTO users (username,password) VALUES (?,?)"),
+    [username, password],
+    (err, result) => console.log(err);
+});
+
 app.use(express.json());
 
 // Serve the public folder for public resources
