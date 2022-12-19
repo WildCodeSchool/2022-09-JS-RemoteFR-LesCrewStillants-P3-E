@@ -1,0 +1,182 @@
+/*
+* Global Page
+*/
+
+.login {
+  width: 100vw;
+  background-color: #f7f8fb;
+  display: flex;
+  flex-direction: column;
+}
+
+.login h1 {
+  color: #96cd32;
+  text-transform: uppercase;
+}
+
+.login-forget {
+  margin-top: 0.8rem;
+  color: #a1a1a1;
+  text-decoration: none;
+  font-size: 0.8em;
+}
+
+.login button {
+  padding: 0.7rem 2rem;
+  background-color: #96cd32;
+  color: #fff;
+  border: none;
+  font-weight: bold;
+  border-radius: 0.2rem;
+  font-size: 1em;
+  display: block;
+  margin: 0 auto;
+}
+
+.login button:hover {
+  cursor: pointer;
+  background-color: #496416;
+  transition: background ease 0.5s;
+}
+
+/*
+* Left side
+*/
+
+.login-left {
+  display: flex;
+  justify-content: center;
+  background-color: #324e73;
+  min-height: 100vh;
+}
+
+.login-left .login-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.login-left p {
+  color: #fff;
+  margin-top: 1rem;
+  font-size: 0.9em;
+}
+
+.login-left img:nth-of-type(1) {
+  width: 60vw;
+}
+
+.login-left h1 {
+  font-size: 1.2em;
+  margin-top: 2rem;
+}
+
+.login-left img:nth-of-type(2) {
+  width: 70vw;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/*
+* Right side
+*/
+
+.login-right {
+  display: flex;
+  justify-content: center;
+}
+
+.login-right .login-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+.login-right img:nth-of-type(1) {
+  width: 60vw;
+}
+
+.login-right h1 {
+  font-size: 1.2em;
+  margin-top: 0;
+}
+
+.login-right form {
+  margin-top: 2rem;
+  width: -webkit-fill-available;
+}
+
+.login-right input {
+  display: block;
+  padding: 0.6rem;
+  border: 1px solid #324e73;
+  border-radius: 5px;
+  margin: auto;
+  margin-bottom: 0.8rem;
+  width: 70%;
+}
+
+.login-right input[type="checkbox"] {
+  display: inline-block;
+  width: fit-content;
+  align-self: flex-start;
+  margin-bottom: 2rem;
+}
+
+@media screen AND (min-width: 768px) {
+  /*
+    * Global page
+    */
+
+  .login {
+    flex-direction: row;
+    min-height: 100vh;
+    width: 100vw;
+  }
+
+  /*
+    * Left side
+    */
+
+  .login-left {
+    width: 50vw;
+    min-height: 100vh;
+  }
+
+  .login-left button {
+    display: none;
+  }
+
+  .login-left img:nth-of-type(1) {
+    width: 20vw;
+  }
+
+  /*
+    * Right side
+    */
+  .login-right {
+    width: 50vw;
+    min-height: 100vh;
+  }
+
+  .login-left img:nth-of-type(2) {
+    width: 30vw;
+  }
+
+  .login-right img:nth-of-type(1) {
+    width: 20vw;
+  }
+
+  .login-right .login-content {
+    justify-content: center;
+  }
+
+  .login-right input {
+    width: 40%;
+  }
+}
