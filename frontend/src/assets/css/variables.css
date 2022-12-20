@@ -2,7 +2,7 @@
 
 
 
-  /* Vert Enedis  */
+  /* Vert Enedis le VERT 500 est la couleur principale utiliser par Enedis  */
 
 
   --vert-Enedis200 : rgb(247,250,238);
@@ -14,7 +14,7 @@
 
 
 
-  /* Blue Enedis  */
+  /* Blue Enedis  le blue 500 est la couleur principale utiliser par Enedis  */
 
 
   --blue-Enedis200 : rgb(246,246,253);
@@ -25,7 +25,7 @@
   --blue-Enedis600 : rgb(4,14,79);
   
 
-  /* Couleur neutres */
+  /* Couleur neutres, le 50 est le plus blanc et le 900 est le plus noir */
 
   --neutre50 : rgb(255,255,255);
   --neutre75 : rgb(249,249,249);
@@ -41,7 +41,7 @@
 
 
 
-  /* Couleur feedback */
+  /* Couleur feedback, les 500 sont la base à utiliser en premier et les autres après */
   
 --vert-fonce200 : rgb(232,247,240);
 --vert-fonce300 : rgb(159,217,194);
