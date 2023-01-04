@@ -2,7 +2,8 @@ const express = require("express");
 const fs = require("fs");
 const path = require("path");
 const cors = require("cors");
-const router = require("./router");
+const router = require("./router/router");
+const routerAuth = require("./router/auth");
 
 const app = express();
 
@@ -14,15 +15,6 @@ app.use(
   })
 );
 
-app.post("/login", (req, res) => {
-  const username = req.body.username;
-  const password = req.body.password;
-
-  pool.query("INSERT INTO users (username,password) VALUES (?,?)"),
-    [username, password],
-    (err, result) => console.log(err);
-});
-
 app.use(express.json());
 
 // Serve the public folder for public resources
@@ -33,6 +25,7 @@ app.use(express.static(path.join(__dirname, "..", "..", "frontend", "dist")));
 
 // API routes
 app.use(router);
+app.use(routerAuth);
 
 // Redirect all requests to the REACT app
 const reactIndexFile = path.join(
