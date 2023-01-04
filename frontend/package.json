@@ -10,6 +10,10 @@
     "fix": "prettier --write . && eslint --fix --ext .jsx ."
   },
   "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/icons-material": "^5.11.0",
+    "@mui/material": "^5.11.3",
     "dotenv": "^16.0.3",
     "mysql2": "^2.3.3",
     "prop-types": "^15.8.1",

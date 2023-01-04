@@ -1,29 +1,34 @@
-import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
-
-import Navbar from "@components/navbar/Navbar";
-import LeftBar from "@components/leftBar/LeftBar";
-import RightBar from "@components/rightBar/Rightbar";
+import {
+  createBrowserRouter,
+  Navigate,
+  RouterProvider,
+} from "react-router-dom";
 import Home from "@pages/home/Home";
 import Profile from "@pages/profile/Profile";
+import Layout from "@services/Layout";
 
 function App() {
-  function Layout() {
-    return (
-      <span>
-        <Navbar />
-        <div style={{ display: "flex" }}>
-          <LeftBar />
-          <Outlet />
-          <RightBar />
-        </div>
-      </span>
-    );
-  };
+  // Protected lecture of homepage
+
+  const currentUser = true;
+
+  // eslint-disable-next-line react/no-unstable-nested-components,react/prop-types
+  function ProtectedRoute({ children }) {
+    if (!currentUser) {
+      return <Navigate to="/login" />;
+    }
+    return children;
+  }
+  // Create route and disposition for homepage and profile page
 
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Layout />,
+      element: (
+        <ProtectedRoute>
+          <Layout />
+        </ProtectedRoute>
+      ),
       children: [
         { path: "/", element: <Home /> },
         { path: "/profile/:id", element: <Profile /> },
