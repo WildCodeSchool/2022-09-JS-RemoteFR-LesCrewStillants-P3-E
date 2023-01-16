@@ -18,7 +18,9 @@ export default function Login() {
       setEmail(e.target.value);
     }
   };
-
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  };
   return (
     <main className="login">
       <section className="login-left">
@@ -39,7 +41,7 @@ export default function Login() {
           <img alt="Enedis Logo" src={loginLogo2} />
           <h1>Connexion</h1>
 
-          <form>
+          <form onSubmit={handleSubmit}>
             <input
               value={email}
               onChange={changeEmail}

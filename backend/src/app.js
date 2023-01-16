@@ -25,7 +25,7 @@ app.use(express.static(path.join(__dirname, "..", "..", "frontend", "dist")));
 
 // API routes
 app.use(router);
-app.use(routerAuth);
+app.use("/auth", routerAuth);
 
 // Redirect all requests to the REACT app
 const reactIndexFile = path.join(
