@@ -7,7 +7,7 @@ class AuthManager extends AbstractManager {
 
   add(user) {
     return this.connection.query(
-      `insert into ${this.table} (firstname, lastname, mail, password) VALUES (?, ?, ?)`,
+      `insert into ${this.table} (firstname, lastname, mail, password) VALUES (?,?,?,?)`,
       [user.firstname, user.lastname, user.mail, user.password]
     );
   }
