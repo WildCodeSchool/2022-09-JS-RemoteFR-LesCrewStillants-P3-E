@@ -5,6 +5,7 @@ import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
 import NotificationsRoundedIcon from "@mui/icons-material/NotificationsRounded";
 import SmsRoundedIcon from "@mui/icons-material/SmsRounded";
 import Avatar from "@mui/material/Avatar";
+
 import HeaderOption from "./HeaderOption";
 
 function Header() {
