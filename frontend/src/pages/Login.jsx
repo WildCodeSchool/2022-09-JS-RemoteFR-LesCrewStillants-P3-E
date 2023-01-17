@@ -5,6 +5,7 @@ import { faArrowRightToBracket } from "@fortawesome/free-solid-svg-icons";
 import loginLogo from "../assets/images/login-logo.jpg";
 import loginLogo2 from "../assets/images/login-logo2.jpg";
 import loginExemple from "../assets/images/login-exemple.jpg";
+import instanceAxios from "../services/axios";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -20,6 +21,17 @@ export default function Login() {
   };
   const handleSubmit = (event) => {
     event.preventDefault();
+    const { mail, password } = event.target.elements;
+
+    instanceAxios
+      .post("/auth/login", {
+        mail: mail.value,
+        password: password.value,
+      })
+      .then((res) => {
+        console.warn(res.data);
+      })
+      .catch((err) => console.warn(err));
   };
   return (
     <main className="login">
