@@ -1,0 +1,113 @@
+:root {
+  /* Vert Enedis le VERT 500 est la couleur principale utiliser par Enedis  */
+
+  --vert-Enedis200: rgb(247, 250, 238);
+  --vert-Enedis300: rgb(211, 234, 171);
+  --vert-Enedis400: rgb(183, 220, 110);
+  --vert-Enedis500: rgb(150, 205, 49);
+  --vert-Enedis600: rgb(105, 143, 34);
+  --vert-Enedis600: rgb(59, 81, 19);
+
+  /* Blue Enedis  le blue 500 est la couleur principale utiliser par Enedis  */
+
+  --blue-Enedis200: rgb(246, 246, 253);
+  --blue-Enedis300: rgb(219, 221, 250);
+  --blue-Enedis400: rgb(77, 88, 237);
+  --blue-Enedis500: rgb(24, 34, 220);
+  --blue-Enedis600: rgb(15, 27, 162);
+  --blue-Enedis600: rgb(4, 14, 79);
+
+  /* Couleur neutres, le 50 est le plus blanc et le 900 est le plus noir */
+
+  --neutre50: rgb(255, 255, 255);
+  --neutre75: rgb(249, 249, 249);
+  --neutre100: rgb(239, 241, 243);
+  --neutre200: rgb(232, 235, 235);
+  --neutre300: rgb(222, 223, 226);
+  --neutre400: rgb(199, 202, 208);
+  --neutre500: rgb(172, 176, 182);
+  --neutre600: rgb(134, 137, 145);
+  --neutre700: rgb(95, 96, 108);
+  --neutre800: rgb(57, 59, 69);
+  --neutre900: rgb(15, 15, 20);
+
+  /* Couleur feedback, les 500 sont la base à utiliser en premier et les autres après */
+
+  --vert-fonce200: rgb(232, 247, 240);
+  --vert-fonce300: rgb(159, 217, 194);
+  --vert-fonce400: rgb(97, 193, 153);
+  --vert-fonce500: rgb(65, 164, 124);
+  --vert-fonce600: rgb(54, 134, 102);
+  --vert-fonce700: rgb(28, 72, 56);
+
+  --jaune-fonce200: rgb(254, 246, 222);
+  --jaune-fonce300: rgb(253, 226, 162);
+  --jaune-fonce400: rgb(252, 206, 92);
+  --jaune-fonce500: rgb(252, 190, 33);
+  --jaune-fonce600: rgb(245, 171, 1);
+  --jaune-fonce700: rgb(128, 88, 0);
+
+  --rouge-fonce200: rgb(254, 223, 230);
+  --rouge-fonce300: rgb(254, 223, 230);
+  --rouge-fonce400: rgb(250, 70, 104);
+  --rouge-fonce500: rgb(223, 7, 39);
+  --rouge-fonce600: rgb(173, 4, 31);
+  --rouge-fonce700: rgb(173, 4, 31);
+
+  /* Couleur secondaires, les 500 sont la base à utiliser en premier et les autres après */
+
+  --blue-moyen-200: rgb(229, 241, 251);
+  --blue-moyen-300: rgb(177, 212, 242);
+  --blue-moyen-400: rgb(111, 177, 231);
+  --blue-moyen-500: rgb(35, 130, 210);
+  --blue-moyen-600: rgb(31, 115, 183);
+  --blue-moyen-700: rgb(24, 87, 140);
+
+  --turquoise-200: rgb(232, 247, 247);
+  --turquoise-300: rgb(190, 233, 233);
+  --turquoise-400: rgb(133, 214, 214);
+  --turquoise-500: rgb(75, 195, 195);
+  --turquoise-600: rgb(55, 164, 164);
+  --turquoise-700: rgb(42, 126, 126);
+
+  --jaune-solaire-200: rgb(255, 246, 224);
+  --jaune-solaire-300: rgb(255, 227, 163);
+  --jaune-solaire-400: rgb(255, 206, 92);
+  --jaune-solaire-500: rgb(255, 195, 40);
+  --jaune-solaire-600: rgb(245, 171, 0);
+  --jaune-solaire-700: rgb(128, 89, 0);
+
+  /* Couleur tertiaires, les 500 sont la base à utiliser en premier et les autres après */
+
+  --orange-300: rgb(246, 193, 172);
+  --orange-400: rgb(241, 159, 126);
+  --orange-500: rgb(235, 110, 60);
+  --orange-600: rgb(232, 89, 33);
+  --orange-700: rgb(148, 53, 16);
+
+  --prune-300: rgb(238, 180, 225);
+  --prune-400: rgb(215, 76, 184);
+  --prune-500: rgb(175, 40, 145);
+  --prune-600: rgb(133, 30, 110);
+  --prune-700: rgb(92, 21, 76);
+
+  --violet-300: rgb(217, 201, 238);
+  --violet-400: rgb(184, 155, 223);
+  --violet-500: rgb(135, 85, 200);
+  --violet-600: rgb(116, 61, 189);
+  --violet-700: rgb(67, 35, 108);
+
+  --taupe-300: rgb(236, 227, 213);
+  --taupe-400: rgb(218, 201, 175);
+  --taupe-500: rgb(200, 175, 135);
+  --taupe-600: rgb(183, 150, 98);
+  --taupe-700: rgb(105, 83, 48);
+
+  --marron-300: rgb(220, 214, 214);
+  --marron-400: rgb(117, 164, 164);
+  --marron-500: rgb(124, 106, 106);
+  --marron-600: rgb(70, 60, 60);
+  --marron-700: rgb(41, 35, 76);
+
+  /* Couleur tertaires, les 500 sont la base à utiliser en premier et les autres après */
+}
