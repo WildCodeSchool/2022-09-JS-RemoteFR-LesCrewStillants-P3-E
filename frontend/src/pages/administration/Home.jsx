@@ -1,7 +1,7 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
 import Header from "../../components/admin/Header";
 import NavLeft from "../../components/admin/NavLeft";
+import PageTitle from "../../components/admin/PageTitle";
 
 export default function Home() {
   return (
@@ -10,9 +10,7 @@ export default function Home() {
       <main>
         <Header />
         <div className="content">
-          <h1>
-            <FontAwesomeIcon icon={faHome} /> Home
-          </h1>
+          <PageTitle title="Home" icon={faHome} />
         </div>
       </main>
     </div>

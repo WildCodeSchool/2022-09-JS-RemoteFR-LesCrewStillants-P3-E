@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHome } from "@fortawesome/free-solid-svg-icons";
+import { faUsers } from "@fortawesome/free-solid-svg-icons";
 import nopicture from "../../assets/images/nopicture.png";
 import Header from "../../components/admin/Header";
 import NavLeft from "../../components/admin/NavLeft";
+import PageTitle from "../../components/admin/PageTitle";
 
 export default function Members({ fakeMembersList }) {
   return (
@@ -12,9 +12,7 @@ export default function Members({ fakeMembersList }) {
       <main>
         <Header />
         <div className="content">
-          <h1>
-            <FontAwesomeIcon icon={faHome} /> Membres
-          </h1>
+          <PageTitle title="Membres" icon={faUsers} />
 
           <section className="membersList flex">
             {fakeMembersList.map((e) => (

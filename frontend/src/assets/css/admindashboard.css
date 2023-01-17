@@ -405,3 +405,9 @@ main {
   cursor: pointer;
   background-color: rgba(234, 234, 234, 0.867);
 }
+
+.card select {
+  border: 1px rgb(207, 207, 207) solid;
+  padding: 0.5rem;
+  border-radius: 0.2rem;
+}

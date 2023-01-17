@@ -1,7 +1,8 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHome, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import React, { useState } from "react";
+import { faArrowLeft, faUser } from "@fortawesome/free-solid-svg-icons";
 import { useParams, Link } from "react-router-dom";
-import NavListElement from "../../components/admin/NavListElement";
+import NavMemberListElement from "../../components/admin/members/NavMemberListElement";
 import Header from "../../components/admin/Header";
 import NavLeft from "../../components/admin/NavLeft";
 import MemberInfos from "../../components/admin/members/MemberInfos";
@@ -9,11 +10,15 @@ import MemberInfosDetails from "../../components/admin/members/MemberInfosDetail
 import MemberInfosUpdate from "../../components/admin/members/memberInfosUpdate";
 import MemberSigninMethodUpdate from "../../components/admin/members/MemberSigninMethodUpdate";
 import MemberDeactivate from "../../components/admin/members/memberDeactivate";
+import MembersRoleUpdate from "../../components/admin/members/MemberRoleUpdate";
+import PageTitle from "../../components/admin/PageTitle";
 
 export default function MembersId({ fakeMembersList }) {
   const { id } = useParams();
   const userInfos = fakeMembersList.filter((e) => +e.id === +id)[0];
   console.warn(userInfos);
+
+  const [navMemberListSelected, setNavMemberListSelected] = useState(0);
 
   const memberNavList = [
     {
@@ -27,15 +32,20 @@ export default function MembersId({ fakeMembersList }) {
     },
   ];
 
+  const hundleChangeMemberNav = (index) => {
+    setNavMemberListSelected(index);
+  };
+
   return (
     <div className="admin">
       <NavLeft elemActive="members" />
       <main>
         <Header />
         <div className="content">
-          <h1>
-            <FontAwesomeIcon icon={faHome} /> Membres
-          </h1>
+          <PageTitle
+            title={`${userInfos.firstName} ${userInfos.lastName}`}
+            icon={faUser}
+          />
 
           <Link to="/admin/members">
             <button
@@ -55,14 +65,28 @@ export default function MembersId({ fakeMembersList }) {
             <div className="member-section-nav">
               <ul>
                 {memberNavList.map((e, index) => (
-                  <NavListElement elem={index} name={e.name} />
+                  <NavMemberListElement
+                    index={index}
+                    name={e.name}
+                    selected={navMemberListSelected}
+                    hundleChange={hundleChangeMemberNav}
+                  />
                 ))}
               </ul>
             </div>
 
-            <MemberInfosUpdate userInfos={userInfos} />
-            <MemberSigninMethodUpdate />
-            <MemberDeactivate />
+            {/* eslint-disable-next-line no-nested-ternary */}
+            {navMemberListSelected === 0 ? (
+              <>
+                <MemberInfosUpdate userInfos={userInfos} />
+                <MemberSigninMethodUpdate />
+                <MemberDeactivate />
+              </>
+            ) : navMemberListSelected === 2 ? (
+              <MembersRoleUpdate />
+            ) : (
+              false
+            )}
           </section>
         </div>
       </main>
