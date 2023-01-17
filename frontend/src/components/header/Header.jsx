@@ -4,6 +4,7 @@ import "./header.css";
 import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
 import NotificationsRoundedIcon from "@mui/icons-material/NotificationsRounded";
 import SmsRoundedIcon from "@mui/icons-material/SmsRounded";
+import Avatar from "@mui/material/Avatar";
 import HeaderOption from "./HeaderOption";
 
 function Header() {
@@ -20,6 +21,14 @@ function Header() {
         <HeaderOption Icon={HomeRoundedIcon} title="Accueil" />
         <HeaderOption Icon={SmsRoundedIcon} title="Messages" />
         <HeaderOption Icon={NotificationsRoundedIcon} title="Notification" />
+        <button type="button" className="profile_btn">
+          <Avatar
+            alt="Mustapha SAID"
+            sx={{ width: 30, height: 30 }}
+            src="/static/images/avatar/1.jpg"
+          />{" "}
+          Mustapha
+        </button>
       </div>
     </div>
   );

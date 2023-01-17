@@ -8,12 +8,13 @@
 }
 
 .header_option:hover {
-  color: blue;
+  color: #2382d2;
 }
 
 .header_option_title {
   font-size: 12px;
-  font-weight: 400;
+  font-weight: 500;
+  margin-top: 0;
 }
 
 .header_option_icon {
@@ -25,9 +26,4 @@
 .header_option_avatar {
   height: 25px !important;
   width: 25px !important;
-}
-
-.header_right :nth-child(6) {
-  border-right: 0.1px solid lightgray;
-  padding-right: 20px;
 }
