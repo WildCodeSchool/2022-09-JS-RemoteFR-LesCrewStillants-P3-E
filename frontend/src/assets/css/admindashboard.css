@@ -411,3 +411,7 @@ main {
   padding: 0.5rem;
   border-radius: 0.2rem;
 }
+
+.modal {
+  background-color: #000000bf;
+}
