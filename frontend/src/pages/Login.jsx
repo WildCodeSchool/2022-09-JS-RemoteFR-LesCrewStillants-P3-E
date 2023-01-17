@@ -21,12 +21,13 @@ export default function Login() {
   };
   const handleSubmit = (event) => {
     event.preventDefault();
-    const { mail, password } = event.target.elements;
+    const mail = event.target.elements[0].value;
+    const password = event.target.elements[1].value;
 
     instanceAxios
       .post("/auth/login", {
-        mail: mail.value,
-        password: password.value,
+        mail,
+        password,
       })
       .then((res) => {
         console.warn(res.data);
@@ -62,7 +63,7 @@ export default function Login() {
             />
             <input type="password" placeholder="Mot de passe" />
             <input type="checkbox" /> Rester connecté
-            <button type="button">
+            <button type="submit">
               <FontAwesomeIcon icon={faArrowRightToBracket} /> Connexion
             </button>
             <span className="login-forget">Mot de passe oublié</span>
