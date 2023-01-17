@@ -1,51 +1,54 @@
-import {
-  Route,
-  Routes,
-  createBrowserRouter,
-  Navigate,
-  RouterProvider,
-} from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Profile from "./pages/profile/Profile";
-import Layout from "./services/Layout";
+// import Layout from "./services/Layout";
 import "./App.css";
 
 function App() {
   // Protected lecture of homepage
 
-  const currentUser = true;
+  const currentUser = false;
 
   // eslint-disable-next-line react/no-unstable-nested-components,react/prop-types
   function ProtectedRoute({ children }) {
-    if (!currentUser) {
-      return <Navigate to="/login" />;
+    if (currentUser) {
+      return children;
     }
-    return children;
+    return <Navigate to="/login" />;
   }
   // Create route and disposition for homepage and profile page
-
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: (
-        <ProtectedRoute>
-          <Layout />
-        </ProtectedRoute>
-      ),
-      children: [
-        { path: "/", element: <Home /> },
-        { path: "/profile/:id", element: <Profile /> },
-      ],
-    },
-  ]);
+  // const router = createBrowserRouter([
+  //   {
+  //     path: "/",
+  //     element: <Home />,
+  //     children: [
+  //       {
+  //         path: "profile/:id",
+  //         element: (
+  //           <ProtectedRoute>
+  //             <Profile />
+  //           </ProtectedRoute>
+  //         ),
+  //       },
+  //       { path: "login", element: <Login /> },
+  //     ],
+  //   },
+  // ]);
   return (
     <div className="App">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
+        <Route
+          path="/profile/:id"
+          element={
+            <ProtectedRoute>
+              <Profile />
+            </ProtectedRoute>
+          }
+        />
       </Routes>
-      <RouterProvider router={router} />
     </div>
   );
 }
