@@ -1,11 +1,15 @@
 import {
+  Route,
+  Routes,
   createBrowserRouter,
   Navigate,
   RouterProvider,
 } from "react-router-dom";
-import Home from "@pages/home/Home";
-import Profile from "@pages/profile/Profile";
-import Layout from "@services/Layout";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Profile from "./pages/profile/Profile";
+import Layout from "./services/Layout";
+import "./App.css";
 
 function App() {
   // Protected lecture of homepage
@@ -37,7 +41,10 @@ function App() {
   ]);
   return (
     <div className="App">
-      <Home />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
       <RouterProvider router={router} />
     </div>
   );
