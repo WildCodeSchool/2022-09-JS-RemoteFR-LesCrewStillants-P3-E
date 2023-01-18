@@ -1,14 +1,17 @@
-import { Routes, Route } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import AdminHome from "./pages/administration/Home";
 import Members from "./pages/administration/Members";
 import MembersId from "./pages/administration/MembersId";
-
+import Profile from "./pages/profile/Profile";
+// import Layout from "./services/Layout";
 import "./App.css";
 
 function App() {
-  const fakeMembersList = [
+  // Protected lecture of homepage
+
+const fakeMembersList = [
     {
       id: 1,
       firstName: "Christine",
@@ -75,6 +78,33 @@ function App() {
     },
   ];
 
+  const currentUser = false;
+
+  // eslint-disable-next-line react/no-unstable-nested-components,react/prop-types
+  function ProtectedRoute({ children }) {
+    if (currentUser) {
+      return children;
+    }
+    return <Navigate to="/login" />;
+  }
+  // Create route and disposition for homepage and profile page
+  // const router = createBrowserRouter([
+  //   {
+  //     path: "/",
+  //     element: <Home />,
+  //     children: [
+  //       {
+  //         path: "profile/:id",
+  //         element: (
+  //           <ProtectedRoute>
+  //             <Profile />
+  //           </ProtectedRoute>
+  //         ),
+  //       },
+  //       { path: "login", element: <Login /> },
+  //     ],
+  //   },
+  // ]);
   return (
     <div className="App">
       <Routes>
@@ -89,6 +119,13 @@ function App() {
         <Route
           path="/admin/members/:id"
           element={<MembersId fakeMembersList={fakeMembersList} />}
+        <Route
+          path="/profile/:id"
+          element={
+            <ProtectedRoute>
+              <Profile />
+            </ProtectedRoute>
+          }
         />
       </Routes>
     </div>

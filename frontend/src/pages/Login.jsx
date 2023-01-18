@@ -5,6 +5,7 @@ import { faArrowRightToBracket } from "@fortawesome/free-solid-svg-icons";
 import loginLogo from "../assets/images/login-logo.jpg";
 import loginLogo2 from "../assets/images/login-logo2.jpg";
 import loginExemple from "../assets/images/login-exemple.jpg";
+import instanceAxios from "../services/axios";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -18,7 +19,21 @@ export default function Login() {
       setEmail(e.target.value);
     }
   };
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const mail = event.target.elements[0].value;
+    const password = event.target.elements[1].value;
 
+    instanceAxios
+      .post("/auth/login", {
+        mail,
+        password,
+      })
+      .then((res) => {
+        console.warn(res.data);
+      })
+      .catch((err) => console.warn(err));
+  };
   return (
     <main className="login">
       <section className="login-left">
@@ -39,7 +54,7 @@ export default function Login() {
           <img alt="Enedis Logo" src={loginLogo2} />
           <h1>Connexion</h1>
 
-          <form>
+          <form onSubmit={handleSubmit}>
             <input
               value={email}
               onChange={changeEmail}
@@ -48,7 +63,7 @@ export default function Login() {
             />
             <input type="password" placeholder="Mot de passe" />
             <input type="checkbox" /> Rester connecté
-            <button type="button">
+            <button type="submit">
               <FontAwesomeIcon icon={faArrowRightToBracket} /> Connexion
             </button>
             <span className="login-forget">Mot de passe oublié</span>
