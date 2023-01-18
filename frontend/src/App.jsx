@@ -11,7 +11,7 @@ import "./App.css";
 function App() {
   // Protected lecture of homepage
 
-const fakeMembersList = [
+  const fakeMembersList = [
     {
       id: 1,
       firstName: "Christine",
@@ -119,6 +119,7 @@ const fakeMembersList = [
         <Route
           path="/admin/members/:id"
           element={<MembersId fakeMembersList={fakeMembersList} />}
+        />
         <Route
           path="/profile/:id"
           element={
