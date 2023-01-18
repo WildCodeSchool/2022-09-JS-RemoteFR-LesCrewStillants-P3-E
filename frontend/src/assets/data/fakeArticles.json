@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "userid": 1,
+    "date": "5 h",
+    "groupe": "Service Santé et Prévention",
+    "text": "Le fichier de prévention pour l’année 2023 est sorti. Il est nécessaire que celui-ci soit à jour pour permettre une meilleure réactivité lors d’un incident. Je compte sur vous pour vérifier et modifier les informations si...",
+    "like": 15,
+    "comments": 12,
+    "view": 25
+  },
+  {
+    "id": 2,
+    "userid": 5,
+    "date": "15 h",
+    "groupe": "Service Santé et Prévention",
+    "text": "Le fichier de prévention pour l’année 2023 est sorti. Il est nécessaire que celui-ci soit à jour pour permettre une meilleure réactivité lors d’un incident. Je compte sur vous pour vérifier et modifier les informations si...",
+    "like": 1,
+    "comments": 2,
+    "view": 5
+  },
+  {
+    "id": 3,
+    "userid": 4,
+    "date": "20 h",
+    "groupe": "Service Santé et Prévention",
+    "text": "Le fichier de prévention pour l’année 2023 est sorti. Il est nécessaire que celui-ci soit à jour pour permettre une meilleure réactivité lors d’un incident. Je compte sur vous pour vérifier et modifier les informations si...",
+    "like": 10,
+    "comments": 22,
+    "view": 30
+  },
+  {
+    "id": 4,
+    "userid": 6,
+    "date": "21 h",
+    "groupe": "Service Santé et Prévention",
+    "text": "Le fichier de prévention pour l’année 2023 est sorti. Il est nécessaire que celui-ci soit à jour pour permettre une meilleure réactivité lors d’un incident. Je compte sur vous pour vérifier et modifier les informations si...",
+    "like": 12,
+    "comments": 20,
+    "view": 31
+  }
+]

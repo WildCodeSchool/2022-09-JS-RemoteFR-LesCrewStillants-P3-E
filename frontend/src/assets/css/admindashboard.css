@@ -415,3 +415,16 @@ main {
 .modal {
   background-color: #000000bf;
 }
+
+/*
+* Article card
+*/
+
+.articles_list_card {
+  background-color: #ffffff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.articles_list_card_footer {
+  border-top: 1px #d5d7d9 solid;
+}
