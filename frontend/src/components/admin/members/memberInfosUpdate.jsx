@@ -21,7 +21,7 @@ export default function MemberInfosUpdate() {
                 Adress <span className="text-red-500">*</span>
               </td>
               <td>
-                <input className="w-full" ype="text" placeholder="Address" />
+                <input className="w-full" type="text" placeholder="Address" />
               </td>
             </tr>
             <tr>

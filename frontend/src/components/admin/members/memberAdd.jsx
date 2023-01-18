@@ -32,7 +32,7 @@ export default function MemberAdd({ hundleClickAddMember }) {
                   <td>
                     <input
                       className="w-full"
-                      ype="text"
+                      type="text"
                       placeholder="Address"
                     />
                   </td>
