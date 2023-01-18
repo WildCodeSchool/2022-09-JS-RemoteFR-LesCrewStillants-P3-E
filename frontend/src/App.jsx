@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import AdminHome from "./pages/administration/Home";
 import Members from "./pages/administration/Members";
+import Articles from "./pages/administration/Articles";
 import MembersId from "./pages/administration/MembersId";
 import Profile from "./pages/profile/Profile";
 // import Layout from "./services/Layout";
@@ -116,6 +117,7 @@ function App() {
           path="/admin/members"
           element={<Members fakeMembersList={fakeMembersList} />}
         />
+        <Route path="/admin/articles" element={<Articles />} />
         <Route
           path="/admin/members/:id"
           element={<MembersId fakeMembersList={fakeMembersList} />}
