@@ -1,4 +1,4 @@
-import "./LeftBar.css";
+import "./ItemBar.css";
 import Groups from "@components/leftBar/Groups";
 import Activity from "@components/leftBar/Activity";
 

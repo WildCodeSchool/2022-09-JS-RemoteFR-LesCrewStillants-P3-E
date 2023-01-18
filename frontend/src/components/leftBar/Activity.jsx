@@ -1,4 +1,4 @@
-import "./LeftBar.css";
+import "./ItemBar.css";
 
 export default function Activity() {
   return (

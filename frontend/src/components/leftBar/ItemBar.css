@@ -1,3 +1,5 @@
+/* Left Bar */
+
 .leftBar {
   width: 16rem;
   height: auto;
@@ -54,4 +56,47 @@
 
 .leftBarGroupItem2:active {
   background-color: #c5d8e8;
+}
+
+/* Right Bar */
+
+.RightBar {
+  width: 22rem;
+  height: auto;
+  margin-top: 1rem;
+  margin-right: 5.5rem;
+  text-align: left;
+  font-family: "Public Sans", sans-serif;
+}
+
+.RightBarSection {
+    width: 100%;
+    height: auto;
+    margin-top: 1rem;
+}
+
+.directoryItem {
+  margin-top: 1rem;
+}
+
+.DirectoryAvatar {
+  margin: 0 0 0 0.5rem;
+}
+
+.buttonZone {
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttonDirectory {
+  width: 10rem;
+  height: 2.5rem;
+  font-size: 1rem;
+    margin: 0.5rem;
+  background-color: #2382d2;
+    color: white;
+  border-radius: 0.2rem;
+border-color: transparent;
 }

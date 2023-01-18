@@ -1,5 +1,5 @@
 import noIcon from "../../../public/img/group-no-icon.png";
-import "./LeftBar.css";
+import "./ItemBar.css";
 
 export default function Groups() {
   return (
