@@ -1,0 +1,57 @@
+.leftBar {
+  width: 16rem;
+  height: auto;
+  margin-left: 5rem;
+  text-align: left;
+  font-family: "Public Sans", sans-serif;
+}
+
+.groupIcon {
+  width: 2rem;
+  height: 2rem;
+  margin: 0.5rem;
+}
+
+.leftBarSection {
+  width: 100%;
+  height: auto;
+  margin-top: 1rem;
+}
+
+.leftBarSectionTitle {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.leftBarGroupItem {
+  margin-top: 0.5rem;
+  height: 3rem;
+  width: 100%;
+  border-radius: 0.2rem;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+}
+
+.leftBarGroupItem:hover {
+  background-color: #c5d8e8;
+}
+
+.leftBarGroupItem2 {
+  height: 3rem;
+  width: 100%;
+  border-radius: 0.2rem;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+}
+
+.leftBarGroupItem2:hover {
+  background-color: #c5d8e8;
+}
+
+.leftBarGroupItem2:active {
+  background-color: #c5d8e8;
+}
