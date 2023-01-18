@@ -70,9 +70,9 @@
 }
 
 .RightBarSection {
-    width: 100%;
-    height: auto;
-    margin-top: 1rem;
+  width: 100%;
+  height: auto;
+  margin-top: 1rem;
 }
 
 .directoryItem {
@@ -84,19 +84,19 @@
 }
 
 .buttonZone {
-    margin-top: 0.5rem;
-    margin-bottom: 1rem;
-    display: flex;
-    justify-content: space-between;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
 }
 
 .buttonDirectory {
   width: 10rem;
   height: 2.5rem;
   font-size: 1rem;
-    margin: 0.5rem;
+  margin: 0.5rem;
   background-color: #2382d2;
-    color: white;
+  color: white;
   border-radius: 0.2rem;
-border-color: transparent;
+  border-color: transparent;
 }

@@ -4,10 +4,10 @@ import Birthday from "@components/rightBar/Birthday";
 
 function RightBar() {
   return (
-      <div className="RightBar">
-        <Directory />
-          <Birthday />
-      </div>
+    <div className="RightBar">
+      <Directory />
+      <Birthday />
+    </div>
   );
 }
 

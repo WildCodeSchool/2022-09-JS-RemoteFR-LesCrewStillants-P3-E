@@ -7,10 +7,10 @@ export default function Home() {
   return (
     <div>
       <Navbar />
-        <div className="container">
-      <LeftBar />
+      <div className="container">
+        <LeftBar />
         <RightBar />
-        </div>
+      </div>
     </div>
   );
 }
