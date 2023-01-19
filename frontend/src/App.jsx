@@ -5,6 +5,8 @@ import AdminHome from "./pages/administration/Home";
 import Members from "./pages/administration/Members";
 import MembersId from "./pages/administration/MembersId";
 import Profile from "./pages/profile/Profile";
+import Feed from "./pages/Feed/Feed";
+
 // import Layout from "./services/Layout";
 import "./App.css";
 
@@ -110,7 +112,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
-
+        <Route path="/feed" element={<Feed />} />
         <Route path="/admin/" element={<AdminHome />} />
         <Route
           path="/admin/members"
