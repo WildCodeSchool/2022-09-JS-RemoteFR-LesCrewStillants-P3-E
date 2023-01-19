@@ -13,12 +13,10 @@ export default function Directory() {
         <img className="DirectoryAvatar" src={AvatarItem} alt="" />
       </div>
       <div className="buttonZone">
-        <button className="buttonDirectory" type="button">
-          Annuaire
-        </button>
-        <button className="buttonDirectory" type="button">
-          Organigramme
-        </button>
+        {/* eslint-disable-next-line react/button-has-type */}
+        <button className="buttonDirectory">Annuaire</button>
+        {/* eslint-disable-next-line react/button-has-type */}
+        <button className="buttonDirectory">Organigramme</button>
       </div>
     </div>
   );
