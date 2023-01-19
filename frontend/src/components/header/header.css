@@ -1,23 +1,25 @@
 .header {
-  position: sticky;
-  top: 0;
-  display: flex;
-  justify-content: space-evenly;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  border-bottom: 0.1px solid lightgray;
   width: 100%;
+  height: 4rem;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   z-index: 999;
 }
 
 .header_left {
   display: flex;
+  align-items: center;
 }
 
 .header_left > img {
   object-fit: contain;
-  height: 30px;
-  margin-right: 20px;
+  height: 2rem;
+  margin-left: 5.5rem;
+  margin-right: 1.5rem;
   cursor: pointer;
 }
 
@@ -28,18 +30,32 @@
   border-radius: 5px;
   background-color: #eef3f8;
   color: grey;
-  height: 17px;
-  width: 250px;
+  height: 1.5rem;
+  width: 16rem;
 }
 
 .header_search > input {
   outline: none;
   border: none;
   background: none;
+  width: 100%;
+  height: 100%;
+  font-size: 0.8rem;
+  color: #aeb1b7;
+  margin-left: 0.5rem;
 }
 
 .header_right {
   display: flex;
+  align-items: center;
+  margin-right: 6rem;
+}
+
+.headerRightItem {
+  display: flex;
+  align-items: center;
+  margin-top: 0.5rem;
+  cursor: pointer;
 }
 
 .profile_btn {
@@ -47,7 +63,7 @@
   background-color: #2382d2;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 0.4rem;
   opacity: 0.8;
   cursor: pointer;
   height: 40px;

@@ -3,9 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="79a19e80-827e-4750-b3ed-4bd0b46c05ff" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/leftBar/ItemBar.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/leftBar/ItemBar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/rightBar/Birthday.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/rightBar/Birthday.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/header/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/header/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/header/header.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/navbar/Navbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/navbar/Navbar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Home.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +66,7 @@
       <workItem from="1673882255342" duration="4943000" />
       <workItem from="1673946860529" duration="59000" />
       <workItem from="1674056340466" duration="5872000" />
-      <workItem from="1674118185429" duration="749000" />
+      <workItem from="1674118185429" duration="1748000" />
     </task>
     <servers />
   </component>
