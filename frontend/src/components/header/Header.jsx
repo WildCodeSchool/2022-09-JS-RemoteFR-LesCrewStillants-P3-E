@@ -19,9 +19,11 @@ function Header() {
         </div>
       </div>
       <div className="header_right">
-        <HeaderOption Icon={HomeRoundedIcon} title="Accueil" />
-        <HeaderOption Icon={SmsRoundedIcon} title="Messages" />
-        <HeaderOption Icon={NotificationsRoundedIcon} title="Notification" />
+        <div className="headerRightItem">
+          <HeaderOption Icon={HomeRoundedIcon} title="Accueil" />
+          <HeaderOption Icon={SmsRoundedIcon} title="Messages" />
+          <HeaderOption Icon={NotificationsRoundedIcon} title="Notification" />
+        </div>
         <button type="button" className="profile_btn">
           <Avatar
             alt="Mustapha SAID"
