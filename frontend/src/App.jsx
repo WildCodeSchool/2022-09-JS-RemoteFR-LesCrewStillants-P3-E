@@ -2,6 +2,8 @@ import { Route, Routes, Navigate } from "react-router-dom";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Profile from "./pages/profile/Profile";
+import Feed from "./pages/Feed/Feed";
+
 // import Layout from "./services/Layout";
 import "./App.css";
 
@@ -40,6 +42,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/feed" element={<Feed />} />
         <Route
           path="/profile/:id"
           element={
