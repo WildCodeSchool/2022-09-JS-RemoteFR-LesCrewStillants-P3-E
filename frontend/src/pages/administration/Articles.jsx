@@ -6,8 +6,14 @@ import {
   faMessage,
   faEye,
 } from "@fortawesome/free-solid-svg-icons";
+
+// Services
 import findDateDistanceStrict from "@services/dates/findDateDistanceStrict";
 import findUser from "@services/users/findUser";
+import findArticlesView from "@services/articles/findArticlesView";
+import findArticlesComment from "@services/articles/findArticlesComment";
+import findArticlesLike from "@services/articles/findArticlesLike";
+
 import Header from "../../components/admin/Header";
 import NavLeft from "../../components/admin/NavLeft";
 import PageTitle from "../../components/admin/PageTitle";
@@ -45,22 +51,28 @@ export default function Articles({ fakeArticlesList }) {
                   <div>{e.text}</div>
                   <div className="articles_list_card_footer flex justify-between pt-2 mt-5 pl-2 pr-2">
                     <div>
+                      <FontAwesomeIcon className="text-blue-400" icon={faEye} />
+                      <span className="ml-2">
+                        {findArticlesView(e.id).length}
+                      </span>
+                    </div>
+                    <div>
                       <FontAwesomeIcon
                         className="text-red-500"
                         icon={faHeart}
                       />
-                      <span className="ml-2">{e.like}</span>
+                      <span className="ml-2">
+                        {findArticlesLike(e.id).length}
+                      </span>
                     </div>
                     <div>
                       <FontAwesomeIcon
                         className="text-zinc-400"
                         icon={faMessage}
                       />
-                      <span className="ml-2">{e.comments}</span>
-                    </div>
-                    <div>
-                      <FontAwesomeIcon className="text-blue-400" icon={faEye} />
-                      <span className="ml-2">{e.view}</span>
+                      <span className="ml-2">
+                        {findArticlesComment(e.id).length}
+                      </span>
                     </div>
                   </div>
                 </div>
