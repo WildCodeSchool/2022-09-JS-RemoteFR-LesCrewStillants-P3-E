@@ -6,7 +6,7 @@ import ChatBubbleOutlineSharpIcon from "@mui/icons-material/ChatBubbleOutlineSha
 import InputOption from "./InputOption";
 
 // eslint-disable-next-line react/prop-types
-function PostBody({ name, description, message, date }) {
+function PostBody({ name, description, message, date, Img }) {
   return (
     <div className="post_body">
       <div className="post_head">
@@ -19,7 +19,10 @@ function PostBody({ name, description, message, date }) {
           <p>{date}</p>
         </div>
       </div>
-      <div className="post_core">{message}</div>
+      <div className="post_core">
+        {message}
+        <div>{Img}</div>
+      </div>
       <div className="Social">
         <div className="Social_left">
           <img src="/public/img/coeur.png" alt="" />

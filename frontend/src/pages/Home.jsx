@@ -1,6 +1,7 @@
 // import { useState } from "react";
 import PostBody from "../components/postbody/PostBody";
 import Header from "../components/header/Header";
+import Comment from "../components/postbody/Comment";
 import "../components/postbody/maison.css";
 
 export default function Home() {
@@ -34,6 +35,10 @@ export default function Home() {
         informations si nécessaire"
             date="6h"
           />
+          <div>
+            {" "}
+            <Comment />
+          </div>
         </div>
         <div className="right">
           <h1>hello</h1>
