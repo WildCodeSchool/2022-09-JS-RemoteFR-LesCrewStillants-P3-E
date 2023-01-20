@@ -3,6 +3,9 @@ import PostBody from "../components/postbody/PostBody";
 import Header from "../components/header/Header";
 import Comment from "../components/postbody/Comment";
 import "../components/postbody/maison.css";
+import LeftBar from "@components/leftBar/LeftBar";
+import RightBar from "@components/rightBar/Rightbar";
+import "./Home.css";
 
 export default function Home() {
   // const [posts, setposts] = useState([]);
@@ -43,6 +46,9 @@ export default function Home() {
         <div className="right">
           <h1>hello</h1>
         </div>
+      <div className="container">
+        <LeftBar />
+        <RightBar />
       </div>
     </div>
   );
