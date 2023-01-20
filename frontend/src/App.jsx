@@ -3,7 +3,6 @@ import { Route, Routes, Navigate } from "react-router-dom";
 // Fake Data
 import fakeMembersList from "@assets/data/fakeUser.json";
 import fakeArticlesList from "@assets/data/fakeArticles.json";
-import fakeArticlesComment from "@assets/data/fakeArticlesComment.json";
 
 import Home from "./pages/Home";
 import Login from "./pages/Login";
@@ -66,16 +65,7 @@ function App() {
             />
           }
         />
-        <Route
-          path="/admin/articles/:id"
-          element={
-            <ArticlesId
-              fakeArticlesList={fakeArticlesList}
-              fakeMembersList={fakeMembersList}
-              fakeArticlesComment={fakeArticlesComment}
-            />
-          }
-        />
+        <Route path="/admin/articles/:id" element={<ArticlesId />} />
         <Route
           path="/admin/members/:id"
           element={<MembersId fakeMembersList={fakeMembersList} />}

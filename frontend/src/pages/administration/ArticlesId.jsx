@@ -8,21 +8,31 @@ import {
   faMessage,
   faEye,
 } from "@fortawesome/free-solid-svg-icons";
+
+// Services
 import findDateDistanceStrict from "@services/dates/findDateDistanceStrict";
 import findUser from "@services/users/findUser";
+import findArticlesView from "@services/articles/findArticlesView";
+import findArticlesComment from "@services/articles/findArticlesComment";
+import findArticlesLike from "@services/articles/findArticlesLike";
+import findArticles from "@services/articles/findArticles";
+
+// Components
 import Header from "../../components/admin/Header";
 import NavLeft from "../../components/admin/NavLeft";
 import PageTitle from "../../components/admin/PageTitle";
 import nopicture from "../../assets/images/nopicture.png";
 
-export default function ArticlesId({ fakeArticlesList, fakeArticlesComment }) {
+export default function ArticlesId() {
   const [showInteraction, setShowInteraction] = useState("view");
   const { id } = useParams();
-  const articleDetails = fakeArticlesList.filter((elem) => elem.id === +id)[0];
-  const articlesUser = findUser(articleDetails.userid);
-  const articlesComment = fakeArticlesComment.filter(
-    (elem) => elem.articlesId === +id
-  );
+
+  // Find fake data
+  const articleDetails = findArticles(+id);
+  const articleView = findArticlesView(+id);
+  const articleComment = findArticlesComment(+id);
+  const articleLike = findArticlesLike(+id);
+  const articleUser = findUser(articleDetails.userid);
 
   const hundleClickChangeInteraction = (e) => {
     setShowInteraction(e);
@@ -51,7 +61,7 @@ export default function ArticlesId({ fakeArticlesList, fakeArticlesComment }) {
                   <img className="w-12 mr-4" src={nopicture} alt="member" />
                 </div>
                 <div>
-                  <div className="text-xl font-bold">{`${articlesUser.firstName} ${articlesUser.lastName}`}</div>
+                  <div className="text-xl font-bold">{`${articleUser.firstName} ${articleUser.lastName}`}</div>
                   <div className="text-sm italic text-zinc-400">
                     {articleDetails.groupe}
                   </div>
@@ -76,7 +86,7 @@ export default function ArticlesId({ fakeArticlesList, fakeArticlesComment }) {
                     onKeyDown={() => hundleClickChangeInteraction("view")}
                   >
                     <FontAwesomeIcon className="text-blue-400" icon={faEye} />
-                    <span className="ml-2">{articleDetails.view}</span>
+                    <span className="ml-2">{articleView.length}</span>
                   </div>
                   <div
                     role="button"
@@ -88,7 +98,7 @@ export default function ArticlesId({ fakeArticlesList, fakeArticlesComment }) {
                     onKeyDown={() => hundleClickChangeInteraction("like")}
                   >
                     <FontAwesomeIcon className="text-red-500" icon={faHeart} />
-                    <span className="ml-2">{articleDetails.like}</span>
+                    <span className="ml-2">{articleLike.length}</span>
                   </div>
                   <div
                     role="button"
@@ -103,20 +113,86 @@ export default function ArticlesId({ fakeArticlesList, fakeArticlesComment }) {
                       className="text-zinc-400"
                       icon={faMessage}
                     />
-                    <span className="ml-2">{articlesComment.length}</span>
+                    <span className="ml-2">{articleComment.length}</span>
                   </div>
                 </div>
               </div>
 
               <div className="bg-white mt-5 interactBox">
-                {showInteraction === "view" ? <div>View:</div> : null}
+                {showInteraction === "view" ? (
+                  <div className="bg-white mt-3">
+                    <div className="text-center p-3 text-xl font-bold mb-3">
+                      <FontAwesomeIcon className="text-blue-400" icon={faEye} />{" "}
+                      View
+                    </div>
+                    <div>
+                      {articleView.map((e) => (
+                        <div className="p-3 flex items-center justify-between bg-slate-100 mb-1">
+                          <div className="flex">
+                            <div>
+                              <img
+                                className="w-8 mr-2"
+                                src={nopicture}
+                                alt="member"
+                              />
+                            </div>
+                            <div className="font-bold ">{`${
+                              findUser(e.userId).firstName
+                            } ${findUser(e.userId).lastName}`}</div>
+                          </div>
+
+                          <div className="text-sm italic">
+                            {findDateDistanceStrict(e.date)}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ) : null}
+                {showInteraction === "like" ? (
+                  <div className="bg-white mt-3">
+                    <div className="text-center p-3 text-xl font-bold mb-3">
+                      <FontAwesomeIcon
+                        className="text-red-500"
+                        icon={faHeart}
+                      />{" "}
+                      like
+                    </div>
+                    <div>
+                      {articleLike.map((e) => (
+                        <div className="p-3 flex items-center justify-between bg-slate-100 mb-1">
+                          <div className="flex">
+                            <div>
+                              <img
+                                className="w-8 mr-2"
+                                src={nopicture}
+                                alt="member"
+                              />
+                            </div>
+                            <div className="font-bold ">{`${
+                              findUser(e.userId).firstName
+                            } ${findUser(e.userId).lastName}`}</div>
+                          </div>
+
+                          <div className="text-sm italic">
+                            {findDateDistanceStrict(e.date)}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ) : null}
                 {showInteraction === "comment" ? (
                   <div className="bg-white mt-3">
                     <div className="text-center p-3 text-xl font-bold mb-3">
+                      <FontAwesomeIcon
+                        className="text-zinc-400"
+                        icon={faMessage}
+                      />{" "}
                       Commentaire
                     </div>
                     <div>
-                      {articlesComment.map((e) => (
+                      {articleComment.map((e) => (
                         <div className="p-5 mb-4">
                           <div className="flex items-center mb-4">
                             <div>
