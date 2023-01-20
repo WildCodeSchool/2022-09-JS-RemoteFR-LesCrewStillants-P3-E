@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "date": "2023-01-20 09:40:00",
+    "articlesId": 1,
+    "userId": 1,
+    "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Id est ea soluta sit similique perspiciatis provident. Exercitationem, quo a quibusdam voluptatem ad maxime cupiditate distinctio! Amet quos illum ipsum sint."
+  },
+  {
+    "id": 2,
+    "date": "2023-01-20 09:40:00",
+    "articlesId": 2,
+    "userId": 2,
+    "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Id est ea soluta sit similique perspiciatis provident. Exercitationem, quo a quibusdam voluptatem ad maxime cupiditate distinctio! Amet quos illum ipsum sint."
+  },
+  {
+    "id": 3,
+    "date": "2023-01-20 09:40:00",
+    "articlesId": 2,
+    "userId": 3,
+    "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Id est ea soluta sit similique perspiciatis provident. Exercitationem, quo a quibusdam voluptatem ad maxime cupiditate distinctio! Amet quos illum ipsum sint."
+  },
+  {
+    "id": 4,
+    "date": "2023-01-20 09:40:00",
+    "articlesId": 1,
+    "userId": 3,
+    "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Id est ea soluta sit similique perspiciatis provident. Exercitationem, quo a quibusdam voluptatem ad maxime cupiditate distinctio! Amet quos illum ipsum sint."
+  }
+]

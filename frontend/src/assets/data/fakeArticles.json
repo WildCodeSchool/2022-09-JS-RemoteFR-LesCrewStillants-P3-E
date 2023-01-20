@@ -2,7 +2,7 @@
   {
     "id": 1,
     "userid": 1,
-    "date": "5 h",
+    "date": "2023-01-15 10:00:00",
     "groupe": "Service Santé et Prévention",
     "text": "Le fichier de prévention pour l’année 2023 est sorti. Il est nécessaire que celui-ci soit à jour pour permettre une meilleure réactivité lors d’un incident. Je compte sur vous pour vérifier et modifier les informations si...",
     "like": 15,
@@ -12,7 +12,7 @@
   {
     "id": 2,
     "userid": 5,
-    "date": "15 h",
+    "date": "2023-01-12 10:00:00",
     "groupe": "Service Santé et Prévention",
     "text": "Le fichier de prévention pour l’année 2023 est sorti. Il est nécessaire que celui-ci soit à jour pour permettre une meilleure réactivité lors d’un incident. Je compte sur vous pour vérifier et modifier les informations si...",
     "like": 1,
@@ -22,7 +22,7 @@
   {
     "id": 3,
     "userid": 4,
-    "date": "20 h",
+    "date": "2023-01-12 10:00:00",
     "groupe": "Service Santé et Prévention",
     "text": "Le fichier de prévention pour l’année 2023 est sorti. Il est nécessaire que celui-ci soit à jour pour permettre une meilleure réactivité lors d’un incident. Je compte sur vous pour vérifier et modifier les informations si...",
     "like": 10,
@@ -32,11 +32,21 @@
   {
     "id": 4,
     "userid": 6,
-    "date": "21 h",
+    "date": "2023-01-12 10:00:00",
     "groupe": "Service Santé et Prévention",
     "text": "Le fichier de prévention pour l’année 2023 est sorti. Il est nécessaire que celui-ci soit à jour pour permettre une meilleure réactivité lors d’un incident. Je compte sur vous pour vérifier et modifier les informations si...",
     "like": 12,
     "comments": 20,
     "view": 31
+  },
+  {
+    "id": 5,
+    "userid": 8,
+    "date": "2023-01-12 10:00:00",
+    "groupe": "Service Santé et Prévention",
+    "text": "Le fichier de prévention pour l’année 2023 est sorti. Il est nécessaire que celui-ci soit à jour pour permettre une meilleure réactivité lors d’un incident. Je compte sur vous pour vérifier et modifier les informations si...",
+    "like": 3,
+    "comments": 0,
+    "view": 5
   }
 ]
