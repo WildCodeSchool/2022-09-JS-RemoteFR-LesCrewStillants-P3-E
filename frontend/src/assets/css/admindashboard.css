@@ -415,3 +415,42 @@ main {
 .modal {
   background-color: #000000bf;
 }
+
+/*
+* Article card
+*/
+
+.articles_list_card {
+  background-color: #ffffff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  transition: all ease 0.5s;
+  height: fit-content;
+}
+
+.articles_list_card_footer {
+  border-top: 1px #d5d7d9 solid;
+}
+
+.articles_list_card:hover {
+  box-shadow: 6px 6px 5px rgb(0 0 0 / 50%);
+  cursor: pointer;
+}
+
+.interactBox {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.test-content-tabs {
+  position: relative;
+}
+
+.test-tabs:after {
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-color: rgb(255, 255, 255);
+  clip-path: polygon(0 0, 50% 70%, 100% 0);
+  bottom: -20px;
+  margin-left: -1.5rem;
+}

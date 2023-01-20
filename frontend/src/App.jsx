@@ -1,8 +1,15 @@
 import { Route, Routes, Navigate } from "react-router-dom";
+
+// Fake Data
+import fakeMembersList from "@assets/data/fakeUser.json";
+import fakeArticlesList from "@assets/data/fakeArticles.json";
+
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import AdminHome from "./pages/administration/Home";
 import Members from "./pages/administration/Members";
+import Articles from "./pages/administration/Articles";
+import ArticlesId from "./pages/administration/ArticlesId";
 import MembersId from "./pages/administration/MembersId";
 import Profile from "./pages/profile/Profile";
 import Feed from "./pages/Feed/Feed";
@@ -12,73 +19,6 @@ import "./App.css";
 
 function App() {
   // Protected lecture of homepage
-
-  const fakeMembersList = [
-    {
-      id: 1,
-      firstName: "Christine",
-      lastName: "Leroy",
-      status: "Responsable",
-      email: "christine.leroy@mail.fr",
-      phone: "05.06.07.08.09",
-    },
-    {
-      id: 2,
-      firstName: "Anthony",
-      lastName: "Gorski",
-      status: "Responsable",
-      email: "anthony.gorskiy@mail.fr",
-      phone: "05.06.07.08.09",
-    },
-    {
-      id: 3,
-      firstName: "Benoît",
-      lastName: "Vandanjon",
-      status: "Sous Responsable",
-      email: "Benoît.Vandanjon@mail.fr",
-      phone: "05.06.07.08.09",
-    },
-    {
-      id: 4,
-      firstName: "Victoire",
-      lastName: "Michel",
-      status: "Product Owner",
-      email: "victoire.michel@mail.fr",
-      phone: "05.06.07.08.09",
-    },
-    {
-      id: 5,
-      firstName: "Mathieu",
-      lastName: "Langlois",
-      status: "Code Reviewer",
-      email: "mathieu.langlois@mail.fr",
-      phone: "05.06.07.08.09",
-    },
-    {
-      id: 6,
-      firstName: "Julien",
-      lastName: "Grellier",
-      status: "Scrum Master",
-      email: "julien.grellier@mail.fr",
-      phone: "05.06.07.08.09",
-    },
-    {
-      id: 7,
-      firstName: "Mustapha",
-      lastName: "Said",
-      status: "Team Member",
-      email: "mustapha.said@mail.fr",
-      phone: "05.06.07.08.09",
-    },
-    {
-      id: 8,
-      firstName: "Elie",
-      lastName: "Parthenay",
-      status: "Team Member",
-      email: "parthenay.elie@mail.fr",
-      phone: "05.06.07.08.09",
-    },
-  ];
 
   const currentUser = false;
 
@@ -118,6 +58,16 @@ function App() {
           path="/admin/members"
           element={<Members fakeMembersList={fakeMembersList} />}
         />
+        <Route
+          path="/admin/articles"
+          element={
+            <Articles
+              fakeArticlesList={fakeArticlesList}
+              fakeMembersList={fakeMembersList}
+            />
+          }
+        />
+        <Route path="/admin/articles/:id" element={<ArticlesId />} />
         <Route
           path="/admin/members/:id"
           element={<MembersId fakeMembersList={fakeMembersList} />}
