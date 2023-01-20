@@ -60,6 +60,10 @@
   height: 20px;
 }
 
+.post_button > button > img {
+  height: 39px;
+}
+
 .line-1 {
   height: 1px;
   background: #d5d7d9;

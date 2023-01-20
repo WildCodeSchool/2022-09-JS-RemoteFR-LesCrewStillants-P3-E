@@ -5,7 +5,8 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import ChatBubbleOutlineSharpIcon from "@mui/icons-material/ChatBubbleOutlineSharp";
 import InputOption from "./InputOption";
 
-function PostBody({ name, description, message, photo, date }) {
+// eslint-disable-next-line react/prop-types
+function PostBody({ name, description, message, date }) {
   return (
     <div className="post_body">
       <div className="post_head">
