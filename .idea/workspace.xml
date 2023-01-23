@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="79a19e80-827e-4750-b3ed-4bd0b46c05ff" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/backend/src/controllers/teamControllers.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/models/TeamManager.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/controllers/userControllers.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/controllers/userControllers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/models/UserManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/models/UserManager.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/router/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/router/router.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -28,7 +29,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/mathieulanglois/GITS/P3/backend/src/controllers",
+    "last_opened_file_path": "/Users/mathieulanglois/GITS/P3/backend/src/models",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -44,8 +45,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/backend/src/controllers" />
       <recent name="$PROJECT_DIR$/backend/src/models" />
+      <recent name="$PROJECT_DIR$/backend/src/controllers" />
       <recent name="$PROJECT_DIR$/backend" />
     </key>
     <key name="MoveFile.RECENT_KEYS">

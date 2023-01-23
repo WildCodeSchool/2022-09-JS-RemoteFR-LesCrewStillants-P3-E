@@ -1,8 +1,8 @@
 const models = require("../models");
 
 const browse = (req, res) => {
-  models.user
-    .getAllUsers()
+  models.team
+    .getAllTeams()
     .then(([rows]) => {
       res.send(rows);
     })
@@ -13,7 +13,7 @@ const browse = (req, res) => {
 };
 
 const read = (req, res) => {
-  models.user
+  models.team
     .find(req.params.id)
     .then(([rows]) => {
       if (rows[0] == null) {
@@ -28,12 +28,12 @@ const read = (req, res) => {
     });
 };
 const edit = (req, res) => {
-  const user = req.body;
+  const team = req.body;
 
-  user.id = parseInt(req.params.id, 10);
+  team.id = parseInt(req.params.id, 10);
 
-  models.user
-    .update(user)
+  models.team
+    .update(team)
     .then(([result]) => {
       if (result.affectedRows === 0) {
         res.sendStatus(404);
@@ -48,14 +48,14 @@ const edit = (req, res) => {
 };
 
 const add = (req, res) => {
-  const user = req.body;
+  const team = req.body;
 
   // TODO validations (length, format...)
 
-  models.user
-    .insert(user)
+  models.team
+    .insert(team)
     .then(([result]) => {
-      res.location(`/users/${result.insertId}`).sendStatus(201);
+      res.location(`/teams/${result.insertId}`).sendStatus(201);
     })
     .catch((err) => {
       console.error(err);
@@ -64,7 +64,7 @@ const add = (req, res) => {
 };
 
 const destroy = (req, res) => {
-  models.user
+  models.team
     .delete(req.params.id)
     .then(([result]) => {
       if (result.affectedRows === 0) {
