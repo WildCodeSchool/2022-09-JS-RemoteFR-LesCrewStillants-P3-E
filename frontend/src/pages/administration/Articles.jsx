@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import {
@@ -19,7 +20,25 @@ import NavLeft from "../../components/admin/NavLeft";
 import PageTitle from "../../components/admin/PageTitle";
 import nopicture from "../../assets/images/nopicture.png";
 
-export default function Articles({ fakeArticlesList }) {
+export default function Articles() {
+  const [articlesList, setArticlesListe] = useState([]);
+
+  const formatDate = (date) => {
+    return `${new Date(date)
+      .toLocaleDateString("fr-FR")
+      .split("/")
+      .reverse()
+      .join("-")} ${new Date(date).toLocaleTimeString("fr-FR")}`;
+  };
+
+  useEffect(() => {
+    fetch(`http://localhost:5000/publication/browse`)
+      .then((response) => response.json())
+      .then((data) => {
+        setArticlesListe(data);
+      });
+  }, []);
+
   return (
     <div className="admin">
       <NavLeft elemActive="articles" />
@@ -29,7 +48,7 @@ export default function Articles({ fakeArticlesList }) {
           <PageTitle title="Articles" icon={faNewspaper} />
 
           <section className="articles_list flex gap-5 flex-wrap">
-            {fakeArticlesList.map((e) => (
+            {articlesList.map((e) => (
               <Link className="w-1/4" to={`/admin/articles/${e.id}`}>
                 <div className=" articles_list_card p-5">
                   <div className="mb-5 flex items-center">
@@ -38,13 +57,13 @@ export default function Articles({ fakeArticlesList }) {
                     </div>
                     <div>
                       <div className="text-xl font-bold">{`${
-                        findUser(e.userid).firstName
-                      } ${findUser(e.userid).lastName}`}</div>
+                        findUser(e.user_id).firstName
+                      } ${findUser(e.user_id).lastName}`}</div>
                       <div className="text-sm italic text-zinc-400">
                         {e.groupe}
                       </div>
                       <div className="text-sm text-zinc-400">
-                        {findDateDistanceStrict(e.date)}
+                        {findDateDistanceStrict(formatDate(e.date))}
                       </div>
                     </div>
                   </div>
