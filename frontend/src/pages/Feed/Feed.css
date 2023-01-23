@@ -1,20 +1,19 @@
 body {
-    background-color: #EDEDED;
+  background-color: #ededed;
 }
 
-
 .feed-fake {
-    display: flex;
-    justify-content: center;
-    height: 220px;
-width: 609px;
-left: 361px;
-top: 234px;
-border-radius: 11px;
-margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  height: 220px;
+  width: 609px;
+  left: 361px;
+  top: 234px;
+  border-radius: 11px;
+  margin-top: 20px;
 }
 
 .fake-feed {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }

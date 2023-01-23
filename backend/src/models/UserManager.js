@@ -5,7 +5,7 @@ class UserManager extends AbstractManager {
     super({ table: "user" });
   }
 
-  add(user) {
+  insert(user) {
     return this.connection.query(
       `insert into ${this.table} (firstname, lastname, mail, password) VALUES (?,?,?,?)`,
       [user.firstname, user.lastname, user.mail, user.password]
@@ -13,13 +13,20 @@ class UserManager extends AbstractManager {
   }
 
   findUser(user) {
-    return this.connection.query(`select * from ${this.table} where mail = ?`, [
-      user.mail,
+    return this.connection.query(`select * from ${this.table} where id = ?`, [
+      user.id,
     ]);
   }
 
-  getAllUsers(user) {
+  getAllUsers() {
     return this.connection.query(`select * from ${this.table}`);
+  }
+
+  update(user) {
+    return this.connection.query(
+      `update ${this.table} set firstname = ?, lastname = ?, email = ? where id = ?`,
+      [user.firstname, user.lastname, user.email]
+    );
   }
 }
 
