@@ -5,6 +5,7 @@ const router = express.Router();
 const itemControllers = require("../controllers/itemControllers");
 const userControllers = require("../controllers/userControllers");
 const teamControllers = require("../controllers/teamControllers");
+const roleControllers = require("../controllers/roleControllers");
 
 router.get("/items", itemControllers.browse);
 router.get("/items/:id", itemControllers.read);
@@ -29,5 +30,13 @@ router.post("/teams", teamControllers.add);
 router.put("/teams/:id", teamControllers.edit);
 router.patch("/teams/:id", teamControllers.edit);
 router.delete("/teams/:id", teamControllers.destroy);
+
+// Roles routes
+
+router.get("/roles/", roleControllers.browse);
+router.post("/roles", roleControllers.add);
+router.put("/roles/:id", roleControllers.edit);
+router.patch("/roles/:id", roleControllers.edit);
+router.delete("/roles/:id", roleControllers.destroy);
 
 module.exports = router;
