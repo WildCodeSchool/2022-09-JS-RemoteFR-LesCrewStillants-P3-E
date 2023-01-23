@@ -1,7 +1,7 @@
 // import { useState } from "react";
 import PostBody from "../components/postbody/PostBody";
 import Header from "../components/header/Header";
-import Comment from "../components/postbody/Comment";
+import Comments from "../components/postbody/comments/Comments";
 import "../components/postbody/maison.css";
 
 export default function Home() {
@@ -37,7 +37,7 @@ export default function Home() {
           />
           <div>
             {" "}
-            <Comment />
+            <Comments currentUserId="1" />
           </div>
         </div>
         <div className="right">
