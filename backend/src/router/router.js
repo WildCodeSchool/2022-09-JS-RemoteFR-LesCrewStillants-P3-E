@@ -6,6 +6,7 @@ const itemControllers = require("../controllers/itemControllers");
 const userControllers = require("../controllers/userControllers");
 const teamControllers = require("../controllers/teamControllers");
 const roleControllers = require("../controllers/roleControllers");
+const postControllers = require("../controllers/postControllers");
 
 router.get("/items", itemControllers.browse);
 router.get("/items/:id", itemControllers.read);
@@ -22,7 +23,7 @@ router.put("/users/:id", userControllers.edit);
 router.patch("/users/:id", userControllers.edit);
 router.delete("/users/:id", userControllers.destroy);
 
-// Groups routes
+// Teams routes
 
 router.get("/teams/", teamControllers.browse);
 router.get("/teams/:id", teamControllers.read);
@@ -38,5 +39,14 @@ router.post("/roles", roleControllers.add);
 router.put("/roles/:id", roleControllers.edit);
 router.patch("/roles/:id", roleControllers.edit);
 router.delete("/roles/:id", roleControllers.destroy);
+
+// Posts routes
+
+router.get("/posts", postControllers.browse);
+router.get("/posts/:id", postControllers.read);
+router.post("/posts", postControllers.add);
+router.put("/posts/:id", postControllers.edit);
+router.patch("/posts/:id", postControllers.edit);
+router.delete("/posts/:id", postControllers.destroy);
 
 module.exports = router;
