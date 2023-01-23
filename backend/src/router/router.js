@@ -6,7 +6,6 @@ const itemControllers = require("../controllers/itemControllers");
 const userControllers = require("../controllers/userControllers");
 const teamControllers = require("../controllers/teamControllers");
 const roleControllers = require("../controllers/roleControllers");
-const postControllers = require("../controllers/postControllers");
 
 router.get("/items", itemControllers.browse);
 router.get("/items/:id", itemControllers.read);
@@ -38,15 +37,6 @@ router.get("/roles/", roleControllers.browse);
 router.post("/roles", roleControllers.add);
 router.put("/roles/:id", roleControllers.edit);
 router.patch("/roles/:id", roleControllers.edit);
-router.delete("/roles/:id", roleControllers.destroy);
-
-// Posts routes
-
-router.get("/posts", postControllers.browse);
-router.get("/posts/:id", postControllers.read);
-router.post("/posts", postControllers.add);
-router.put("/posts/:id", postControllers.edit);
-router.patch("/posts/:id", postControllers.edit);
-router.delete("/posts/:id", postControllers.destroy);
+router.delete("/roles/:id", roleControllers.destroy);xs
 
 module.exports = router;

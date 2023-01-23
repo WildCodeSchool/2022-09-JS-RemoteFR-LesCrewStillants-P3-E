@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="79a19e80-827e-4750-b3ed-4bd0b46c05ff" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/src/controllers/postControllers.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/models/PostManager.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/controllers/postControllers.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/models/PostManager.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/router/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/router/router.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -81,7 +80,7 @@
       <workItem from="1673946860529" duration="59000" />
       <workItem from="1674056340466" duration="5872000" />
       <workItem from="1674118185429" duration="1834000" />
-      <workItem from="1674508545432" duration="579000" />
+      <workItem from="1674508545432" duration="874000" />
     </task>
     <servers />
   </component>
