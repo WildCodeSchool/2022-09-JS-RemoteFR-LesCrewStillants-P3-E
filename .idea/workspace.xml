@@ -9,8 +9,6 @@
       <change beforePath="$PROJECT_DIR$/backend/src/controllers/userControllers.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/controllers/userControllers.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/models/UserManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/models/UserManager.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/router/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/router/router.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/postComponent/postComponent.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/postComponent/postComponent.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Feed/Feed.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Feed/Feed.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

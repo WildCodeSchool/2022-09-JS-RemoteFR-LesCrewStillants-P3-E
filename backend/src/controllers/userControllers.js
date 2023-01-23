@@ -12,22 +12,21 @@ const browse = (req, res) => {
     });
 };
 
-const find = (req, res) => {
-  models.user
-    .findUser(req.params.id)
-    .then(([rows]) => {
-      if (rows[0] == null) {
-        res.sendStatus(404);
-      } else {
-        res.send(rows[0]);
-      }
-    })
-    .catch((err) => {
-      console.error(err);
-      res.sendStatus(500);
-    });
+const read = (req, res) => {
+    models.user
+        .find(req.params.id)
+        .then(([rows]) => {
+            if (rows[0] == null) {
+                res.sendStatus(404);
+            } else {
+                res.send(rows[0]);
+            }
+        })
+        .catch((err) => {
+            console.error(err);
+            res.sendStatus(500);
+        });
 };
-
 const edit = (req, res) => {
   const user = req.body;
 
@@ -82,7 +81,7 @@ const destroy = (req, res) => {
 
 module.exports = {
   browse,
-  find,
+  read,
   edit,
   add,
   destroy,
