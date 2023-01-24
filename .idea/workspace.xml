@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="79a19e80-827e-4750-b3ed-4bd0b46c05ff" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/leftBar/ItemBar.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/leftBar/ItemBar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/rightBar/Directory.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/rightBar/Directory.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/router/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/router/router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/header/HeaderOption.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/header/HeaderOption.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,9 +27,11 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/mathieulanglois/GITS/P3/backend&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/mathieulanglois/GITS/P3/backend/src/models&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
@@ -40,6 +43,8 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/backend/src/models" />
+      <recent name="$PROJECT_DIR$/backend/src/controllers" />
       <recent name="$PROJECT_DIR$/backend" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -47,6 +52,14 @@
       <recent name="$PROJECT_DIR$/frontend/src/assets" />
       <recent name="$PROJECT_DIR$/frontend/src/components" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
+      <deployment type="dockerfile">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -67,6 +80,8 @@
       <workItem from="1673946860529" duration="59000" />
       <workItem from="1674056340466" duration="5872000" />
       <workItem from="1674118185429" duration="1834000" />
+      <workItem from="1674508545432" duration="1001000" />
+      <workItem from="1674567193021" duration="565000" />
     </task>
     <servers />
   </component>
