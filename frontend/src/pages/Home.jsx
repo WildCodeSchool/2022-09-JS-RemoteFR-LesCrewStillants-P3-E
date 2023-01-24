@@ -5,7 +5,6 @@ import Comments from "../components/postbody/comments/Comments";
 import "../components/postbody/maison.css";
 
 export default function Home() {
-  // const [posts, setposts] = useState([]);
   return (
     <div>
       <Header />
@@ -14,9 +13,6 @@ export default function Home() {
           <h1>divd,cn</h1>
         </div>
         <div className="middle">
-          {/* {posts.map((post) => (
-            <PostBody />
-          ))} */}
           <PostBody
             name="Elie Partenay"
             description="directeur admin"
