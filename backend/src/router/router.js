@@ -4,6 +4,7 @@ const fs = require("fs");
 
 const multer = require("multer");
 
+// eslint-disable-next-line import/no-unresolved
 const { v4: uuidv4 } = require("uuid");
 
 const upload = multer({ dest: "uploads/" });

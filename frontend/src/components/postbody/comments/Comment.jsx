@@ -27,7 +27,7 @@ function Comment({
       <div className="comment-right-part">
         <div className="comment-content">
           <div className="comment-author">{comment.username}</div>
-          <div>{createdAt}</div>
+          <div className="date">{createdAt}</div>
         </div>
         <div className="comment-text">{comment.body}</div>
         <div className="comment-actions">
@@ -41,13 +41,13 @@ function Comment({
                 setActiveComment({ id: comment.id, type: "replying" })
               }
             >
-              Reply
+              Répondre
             </div>
           )}
         </div>
         {isReplying && (
           <FormComment
-            submitLabel="Reply"
+            submitLabel="Répondre"
             handleSubmit={(text) => addComment(text, replyId)}
           />
         )}

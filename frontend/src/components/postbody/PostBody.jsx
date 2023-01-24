@@ -1,12 +1,16 @@
+import { useState } from "react";
 import Avatar from "@mui/material/Avatar";
-import React from "react";
 import "./maison.css";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import ChatBubbleOutlineSharpIcon from "@mui/icons-material/ChatBubbleOutlineSharp";
 import InputOption from "./InputOption";
+import Comments from "./comments/Comments";
 
-// eslint-disable-next-line react/prop-types
 function PostBody({ name, description, message, date, Img }) {
+  const [showComponent, setShowComponent] = useState(false);
+  function handleClick() {
+    setShowComponent(!showComponent);
+  }
   return (
     <div className="post_body">
       <div className="post_head">
@@ -37,12 +41,14 @@ function PostBody({ name, description, message, date, Img }) {
       <div className="line-1" />
       <div className="post_button">
         <InputOption Icon={FavoriteBorderIcon} title="J'aime" color="#343A3F" />
-
-        <InputOption
-          Icon={ChatBubbleOutlineSharpIcon}
-          title="Commenter"
-          color="#343A3F"
-        />
+        <div role="button" tabIndex={0} onClick={handleClick}>
+          {showComponent ? <Comments /> : null}
+          <InputOption
+            Icon={ChatBubbleOutlineSharpIcon}
+            title="Commenter"
+            color="#343A3F"
+          />
+        </div>
       </div>
     </div>
   );

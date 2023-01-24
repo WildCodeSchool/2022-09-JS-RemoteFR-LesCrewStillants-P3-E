@@ -1,56 +1,61 @@
 .comments {
-  margin-top: 20px;
   background-color: white;
+  padding: 20px;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  width: 609px;
+  border: solid 1px;
+  border-color: #e0dfdc;
+  text-align: left;
 }
 
 .comments-title {
-  font-size: 30px;
-  margin-bottom: 20px;
+  font-size: 16px;
+  margin-bottom: 10px;
 }
 
 .comments-container {
   margin-top: 40px;
 }
 
-.comment-form-title {
-  font-size: 22px;
-}
-
 .comment-form-textarea {
-  width: 100%;
-  height: 80px;
-  margin-bottom: 8px;
-  margin-top: 8px;
-  border: 1px solid rgb(107, 114, 12);
+  width: 95%;
+  height: 48px;
+  width: 529px;
+  background-color: #e5f1fb;
+  border: none;
+  resize: none;
+  overflow: hidden;
+  border-radius: 5px;
 }
 
 .comment-form-button {
   font-size: 16px;
   padding: 8px 16px;
-  background: rgb(59, 130, 246);
+  background-color: #009ef7;
   border-radius: 8px;
-  color: white;
-}
-
-.comment-form-button:hover:enabled {
-  cursor: pointer;
-  background: rgb(37, 99, 235);
 }
 
 .comment-form-button:disabled {
   opacity: 0.7;
-  background-color: aqua;
+  background-color: #009ef7;
   cursor: default;
+  color: white;
 }
 
+.comment-form-button:enabled {
+  background-color: #009ef7;
+  cursor: default;
+  color: white;
+  cursor: pointer;
+}
 .comment-form-cancel-button {
   margin-left: 10px;
 }
 
 .comment {
-  padding-left: 16px;
   display: flex;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .comment-image-container {
@@ -63,8 +68,6 @@
 
 .comment-right-part {
   width: 100%;
-  background-color: whitesmoke;
-  border-radius: 10px;
 }
 
 .comment-content {
@@ -74,11 +77,12 @@
 .comment-author {
   margin-right: 8px;
   font-size: 16px;
-  color: rgb(59, 130, 246);
+  font-weight: bold;
+  color: #343a3f;
 }
 
 .comment-text {
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .comment-actions {
@@ -99,4 +103,32 @@
 
 .replies {
   margin-top: 20px;
+}
+
+.date {
+  font-size: 12px;
+  color: rgb(51, 51, 51);
+  margin-top: 4px;
+}
+
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  padding: auto;
+}
+
+.inputC > textarea {
+  padding: 10px;
+}
+
+.inputC {
+  display: flex;
+  padding: 10px;
+}
+
+.inputC > img {
+  margin-top: 5px;
+  width: 35px;
+  height: 35px;
+  margin-right: 10px;
 }
