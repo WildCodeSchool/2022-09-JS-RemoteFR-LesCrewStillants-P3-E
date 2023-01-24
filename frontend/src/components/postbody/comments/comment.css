@@ -1,5 +1,6 @@
 .comments {
   margin-top: 20px;
+  background-color: white;
 }
 
 .comments-title {
@@ -38,6 +39,7 @@
 
 .comment-form-button:disabled {
   opacity: 0.7;
+  background-color: aqua;
   cursor: default;
 }
 
@@ -46,8 +48,9 @@
 }
 
 .comment {
+  padding-left: 16px;
   display: flex;
-  margin-bottom: 28px;
+  margin-bottom: 10px;
 }
 
 .comment-image-container {
@@ -60,6 +63,8 @@
 
 .comment-right-part {
   width: 100%;
+  background-color: whitesmoke;
+  border-radius: 10px;
 }
 
 .comment-content {
@@ -68,12 +73,12 @@
 
 .comment-author {
   margin-right: 8px;
-  font-size: 20px;
+  font-size: 16px;
   color: rgb(59, 130, 246);
 }
 
 .comment-text {
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .comment-actions {

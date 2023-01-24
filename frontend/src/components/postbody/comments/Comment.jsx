@@ -1,9 +1,23 @@
 import React from "react";
 import "./comment.css";
+import FormComment from "./FormComment";
 
-function Comment({ comment, replies, currentUserId }) {
+function Comment({
+  comment,
+  replies,
+  currentUserId,
+  setActiveComment,
+  activeComment,
+  addComment,
+  parentId = null,
+}) {
   const canReply = Boolean(currentUserId);
   const createdAt = new Date(comment.createdAt).toLocaleDateString();
+  const isReplying =
+    activeComment &&
+    activeComment.id === comment.id &&
+    activeComment.type === "replying";
+  const replyId = parentId || comment.id;
 
   return (
     <div className="comment">
@@ -18,12 +32,38 @@ function Comment({ comment, replies, currentUserId }) {
         <div className="comment-text">{comment.body}</div>
         <div className="comment-actions">
           <div className="comment-action">J'aime</div>
-          {canReply && <div className="comment-action">Repondre</div>}
+          {canReply && (
+            <div
+              role="button"
+              tabIndex={0}
+              className="comment-action"
+              onClick={() =>
+                setActiveComment({ id: comment.id, type: "replying" })
+              }
+            >
+              Reply
+            </div>
+          )}
         </div>
+        {isReplying && (
+          <FormComment
+            submitLabel="Reply"
+            handleSubmit={(text) => addComment(text, replyId)}
+          />
+        )}
         {replies.length > 0 && (
           <div className="replies">
             {replies.map((reply) => (
-              <Comment comment={reply} key={reply.id} replies={[]} />
+              <Comment
+                comment={reply}
+                key={reply.id}
+                replies={[]}
+                currentUserId={currentUserId}
+                setActiveComment={setActiveComment}
+                parentId={comment.id}
+                activeComment={activeComment}
+                addComment={addComment}
+              />
             ))}
           </div>
         )}

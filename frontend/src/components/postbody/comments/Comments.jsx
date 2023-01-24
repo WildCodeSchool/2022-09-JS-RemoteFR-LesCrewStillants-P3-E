@@ -9,6 +9,8 @@ import FormComment from "./FormComment";
 
 function Comments({ currentUserId }) {
   const [backendComments, setBackendComments] = useState([]);
+  const [activeComment, setActiveComment] = useState(null);
+
   const rootComments = backendComments.filter(
     (backendComment) => backendComment.parentId === null
   );
@@ -26,6 +28,7 @@ function Comments({ currentUserId }) {
   const addComment = (text, parentId) => {
     createCommentApi(text, parentId).then((comment) => {
       setBackendComments([comment, ...backendComments]);
+      setActiveComment(null);
     });
   };
 
@@ -44,6 +47,9 @@ function Comments({ currentUserId }) {
             comment={rootComment}
             replies={getReplies(rootComment.id)}
             currentUserId={currentUserId}
+            activeComment={activeComment}
+            setActiveComment={setActiveComment}
+            addComment={addComment}
           />
         ))}
       </div>
