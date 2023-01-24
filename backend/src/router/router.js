@@ -37,6 +37,6 @@ router.get("/roles/", roleControllers.browse);
 router.post("/roles", roleControllers.add);
 router.put("/roles/:id", roleControllers.edit);
 router.patch("/roles/:id", roleControllers.edit);
-router.delete("/roles/:id", roleControllers.destroy);xs
+router.delete("/roles/:id", roleControllers.destroy);
 
 module.exports = router;
