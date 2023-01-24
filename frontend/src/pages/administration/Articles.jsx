@@ -32,13 +32,12 @@ export default function Articles() {
   };
 
   useEffect(() => {
-    fetch(`http://localhost:5000/publication/browse`)
+    fetch(`${import.meta.env.VITE_BACKEND_URL}/publication/browse`)
       .then((response) => response.json())
       .then((data) => {
         setArticlesListe(data);
       });
   }, []);
-
   return (
     <div className="admin">
       <NavLeft elemActive="articles" />
