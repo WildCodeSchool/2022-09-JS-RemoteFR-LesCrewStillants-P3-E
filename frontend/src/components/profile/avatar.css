@@ -1,0 +1,22 @@
+.avtar {
+  display: flex;
+  justify-content: center;
+}
+
+.imgAv {
+  height: 143px;
+  width: 154px;
+}
+
+.changeAv {
+  display: flex;
+  align-items: flex-end;
+}
+
+.sendbtn {
+  display: flex;
+}
+
+.file {
+  display: flex;
+}

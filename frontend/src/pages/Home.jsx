@@ -1,8 +1,12 @@
-// import { useState } from "react";
 import PostBody from "../components/postbody/PostBody";
 import Header from "../components/header/Header";
 import Comments from "../components/postbody/comments/Comments";
 import "../components/postbody/maison.css";
+import LeftBar from "@components/leftBar/LeftBar";
+import RightBar from "@components/rightBar/Rightbar";
+import "./Home.css";
+import Header from "@components/header/Header";
+
 
 export default function Home() {
   return (
@@ -32,14 +36,18 @@ export default function Home() {
             date="6h"
           />
           <div>
-            {" "}
             <Comments currentUserId="1" />
           </div>
         </div>
         <div className="right">
           <h1>hello</h1>
         </div>
+        <div className="container">
+          <LeftBar />
+          <RightBar />
+        </div>
       </div>
     </div>
   );
 }
+
