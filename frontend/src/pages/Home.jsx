@@ -1,12 +1,10 @@
+import RightBar from "../components/rightBar/Rightbar";
+import LeftBar from "../components/leftBar/LeftBar";
 import PostBody from "../components/postbody/PostBody";
 import Header from "../components/header/Header";
 import Comments from "../components/postbody/comments/Comments";
 import "../components/postbody/maison.css";
-import LeftBar from "@components/leftBar/LeftBar";
-import RightBar from "@components/rightBar/Rightbar";
 import "./Home.css";
-
-
 
 export default function Home() {
   return (
@@ -14,7 +12,8 @@ export default function Home() {
       <Header />
       <div className="body">
         <div className="left">
-          <h1>divd,cn</h1>
+          {" "}
+          <LeftBar />
         </div>
         <div className="middle">
           <PostBody
@@ -40,12 +39,9 @@ export default function Home() {
           </div>
         </div>
         <div className="right">
-          <h1>hello</h1>
-        </div>
-        <div className="container">
-          <LeftBar />
           <RightBar />
         </div>
+        <div className="container" />
       </div>
     </div>
   );

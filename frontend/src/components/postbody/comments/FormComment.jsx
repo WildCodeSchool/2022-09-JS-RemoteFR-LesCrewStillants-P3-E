@@ -11,12 +11,16 @@ function FormComment({ handleSubmit, submitLabel }) {
   };
 
   return (
-    <form onSubmit={onSubmit}>
-      <textarea
-        className="comment-form-textarea"
-        value={text}
-        onChange={(e) => setText(e.target.value)}
-      />
+    <form className="form" onSubmit={onSubmit}>
+      <div className="inputC">
+        <img src="/img/avatar-profil.png" alt="" />
+        <textarea
+          placeholder="Ajouter un commentaire..."
+          className="comment-form-textarea"
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+        />
+      </div>
       <button
         type="submit"
         className="comment-form-button"

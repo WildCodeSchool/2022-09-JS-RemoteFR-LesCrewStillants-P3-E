@@ -1,13 +1,16 @@
 .feed {
   flex: 0.6;
   margin: 10px;
+  margin-top: 2rem;
 }
 .left {
   flex: 0.3;
+  margin-right: 2rem;
 }
 
 .right {
   flex: 0.3;
+  margin-left: 2rem;
 }
 
 .body {
@@ -18,12 +21,12 @@
 .post_body {
   background-color: white;
   padding: 20px;
-  margin-bottom: 10px;
   border-radius: 10px;
   width: 609px;
   border: solid 1px;
   border-color: #e0dfdc;
   text-align: left;
+  margin-top: 1rem;
 }
 
 .post_head {

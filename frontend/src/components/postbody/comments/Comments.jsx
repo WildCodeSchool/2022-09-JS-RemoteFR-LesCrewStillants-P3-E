@@ -39,7 +39,7 @@ function Comments({ currentUserId }) {
   }, []);
   return (
     <div className="comments">
-      <h3 className="font-extrabold">Comments</h3>
+      <FormComment submitLabel="Publier" handleSubmit={addComment} />
       <div className="comments-container">
         {rootComments.map((rootComment) => (
           <Comment
@@ -53,8 +53,6 @@ function Comments({ currentUserId }) {
           />
         ))}
       </div>
-      <div className="comment-form-title">Write comment</div>
-      <FormComment submitLabel="Write" handleSubmit={addComment} />
     </div>
   );
 }
