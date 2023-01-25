@@ -23,6 +23,7 @@ function Post() {
     event: null,
   });
 
+  // eslint-disable-next-line no-unused-vars
   const handlePostMediaChange = (e) => {
     setPostMedia({ ...postMedia, [e.target.name]: e.target.files[0] });
   };
@@ -30,6 +31,7 @@ function Post() {
   // eslint-disable-next-line no-unused-vars
   const handlePublishPost = () => {
     const postData = new FormData();
+    // eslint-disable-next-line no-undef
     postData.append("text", postText);
     postData.append("picture", postMedia.picture);
     postData.append("pdf", postMedia.pdf);
