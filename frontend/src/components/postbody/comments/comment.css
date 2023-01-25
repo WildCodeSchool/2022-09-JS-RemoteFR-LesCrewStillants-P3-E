@@ -72,6 +72,7 @@
 
 .comment-content {
   display: flex;
+  justify-content: space-between;
 }
 
 .comment-author {
@@ -131,4 +132,11 @@
   width: 35px;
   height: 35px;
   margin-right: 10px;
+}
+
+.comment-bg {
+  background-color: whitesmoke;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
 }
