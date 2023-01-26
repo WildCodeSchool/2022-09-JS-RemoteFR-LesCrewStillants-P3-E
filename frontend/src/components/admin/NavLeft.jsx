@@ -30,10 +30,12 @@ const navList = [
   {
     name: "Catégories",
     icon: faFolderTree,
+    href: "category",
   },
   {
     name: "Paramètre",
     icon: faGear,
+    href: "settings",
   },
 ];
 

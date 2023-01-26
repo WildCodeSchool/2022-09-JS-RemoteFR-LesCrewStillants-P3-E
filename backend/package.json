@@ -20,6 +20,7 @@
     "express": "^4.17.2",
     "jsonwebtoken": "^9.0.0",
     "mysql2": "^2.3.3",
+    "nodemailer": "^6.9.0",
     "template-fullstack": "file:.."
   },
   "rules": {
