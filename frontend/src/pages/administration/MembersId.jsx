@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { faArrowLeft, faUser } from "@fortawesome/free-solid-svg-icons";
 import { useParams, Link } from "react-router-dom";
 import NavMemberListElement from "../../components/admin/members/NavMemberListElement";
@@ -13,12 +13,11 @@ import MemberDeactivate from "../../components/admin/members/memberDeactivate";
 import MembersRoleUpdate from "../../components/admin/members/MemberRoleUpdate";
 import PageTitle from "../../components/admin/PageTitle";
 
-export default function MembersId({ fakeMembersList }) {
+export default function MembersId() {
   const { id } = useParams();
-  const userInfos = fakeMembersList.filter((e) => +e.id === +id)[0];
-  console.warn(userInfos);
 
   const [navMemberListSelected, setNavMemberListSelected] = useState(0);
+  const [memberDetails, setMemberDetails] = useState([]);
 
   const memberNavList = [
     {
@@ -36,6 +35,15 @@ export default function MembersId({ fakeMembersList }) {
     setNavMemberListSelected(index);
   };
 
+  useEffect(() => {
+    fetch(`${import.meta.env.VITE_BACKEND_URL}/users/${id}`)
+      .then((response) => response.json())
+      .then((data) => {
+        setMemberDetails(data);
+        // setMemberList(data);
+      });
+  }, []);
+
   return (
     <div className="admin">
       <NavLeft elemActive="members" />
@@ -43,7 +51,7 @@ export default function MembersId({ fakeMembersList }) {
         <Header />
         <div className="content">
           <PageTitle
-            title={`${userInfos.firstName} ${userInfos.lastName}`}
+            title={`${memberDetails.firstname} ${memberDetails.lastname}`}
             icon={faUser}
           />
 
@@ -57,8 +65,8 @@ export default function MembersId({ fakeMembersList }) {
           </Link>
 
           <div className="memberDetails">
-            <MemberInfos userInfos={userInfos} />
-            <MemberInfosDetails userInfos={userInfos} />
+            <MemberInfos userInfos={memberDetails} />
+            <MemberInfosDetails userInfos={memberDetails} />
           </div>
 
           <section className="member-section">
@@ -78,7 +86,7 @@ export default function MembersId({ fakeMembersList }) {
             {/* eslint-disable-next-line no-nested-ternary */}
             {navMemberListSelected === 0 ? (
               <>
-                <MemberInfosUpdate userInfos={userInfos} />
+                <MemberInfosUpdate userInfos={memberDetails} />
                 <MemberSigninMethodUpdate />
                 <MemberDeactivate />
               </>

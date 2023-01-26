@@ -1,3 +1,4 @@
+const fs = require("fs");
 const models = require("../models");
 
 const browse = (req, res) => {
@@ -72,12 +73,29 @@ const editAvatar = async (req, res) => {
 
 const add = (req, res) => {
   const user = req.body;
-
   // TODO validations (length, format...)
 
   models.user
     .insert(user)
     .then(([result]) => {
+      // eslint-disable-next-line global-require
+      const mailer = require("../../helper/mailer");
+      const templateFile = fs
+        .readFileSync("./src/template/emailRegisterTemplate.html")
+        .toString()
+        .replace("%name%", `${user.firstname} ${user.lastname}`);
+      mailer.sendMail(
+        {
+          from: "notitia@musicwizz.fr",
+          to: user.mail,
+          subject: "Bienvenue sur Notitia",
+          text: "Hello world",
+          html: templateFile,
+        },
+        (err) => {
+          if (err) console.error(err);
+        }
+      );
       res.location(`/users/${result.insertId}`).sendStatus(201);
     })
     .catch((err) => {
