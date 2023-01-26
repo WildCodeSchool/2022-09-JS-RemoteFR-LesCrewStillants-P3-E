@@ -19,6 +19,7 @@
     "@mui/icons-material": "^5.11.0",
     "@mui/material": "^5.11.3",
     "axios": "^1.2.2",
+    "date-fns": "^2.29.3",
     "dotenv": "^16.0.3",
     "mysql2": "^2.3.3",
     "prop-types": "^15.8.1",

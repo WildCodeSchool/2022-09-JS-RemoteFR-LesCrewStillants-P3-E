@@ -25,6 +25,7 @@ const navList = [
   {
     name: "Articles",
     icon: faNewspaper,
+    href: "articles",
   },
   {
     name: "Catégories",
