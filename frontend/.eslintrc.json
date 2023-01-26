@@ -17,6 +17,7 @@
   },
   "plugins": ["react", "import"],
   "rules": {
+    "jsx-a11y/click-events-have-key-events": "off",
     "no-console": "off",
     "react/prop-types": "off",
     "no-restricted-syntax": [
