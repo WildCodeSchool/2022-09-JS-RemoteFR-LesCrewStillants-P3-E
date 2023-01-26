@@ -1,0 +1,142 @@
+.comments {
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  width: 609px;
+  border: solid 1px;
+  border-color: #e0dfdc;
+  text-align: left;
+}
+
+.comments-title {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.comments-container {
+  margin-top: 40px;
+}
+
+.comment-form-textarea {
+  width: 95%;
+  height: 48px;
+  width: 529px;
+  background-color: #e5f1fb;
+  border: none;
+  resize: none;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.comment-form-button {
+  font-size: 16px;
+  padding: 8px 16px;
+  background-color: #009ef7;
+  border-radius: 8px;
+}
+
+.comment-form-button:disabled {
+  opacity: 0.7;
+  background-color: #009ef7;
+  cursor: default;
+  color: white;
+}
+
+.comment-form-button:enabled {
+  background-color: #009ef7;
+  cursor: default;
+  color: white;
+  cursor: pointer;
+}
+.comment-form-cancel-button {
+  margin-left: 10px;
+}
+
+.comment {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.comment-image-container {
+  margin-right: 12px;
+}
+
+.comment-image-container img {
+  border-radius: 50px;
+}
+
+.comment-right-part {
+  width: 100%;
+}
+
+.comment-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.comment-author {
+  margin-right: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #343a3f;
+}
+
+.comment-text {
+  font-size: 18px;
+}
+
+.comment-actions {
+  display: flex;
+  font-size: 12px;
+  color: rgb(51, 51, 51);
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.comment-action {
+  margin-right: 8px;
+}
+
+.comment-action:hover {
+  text-decoration: underline;
+}
+
+.replies {
+  margin-top: 20px;
+}
+
+.date {
+  font-size: 12px;
+  color: rgb(51, 51, 51);
+  margin-top: 4px;
+}
+
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  padding: auto;
+}
+
+.inputC > textarea {
+  padding: 10px;
+}
+
+.inputC {
+  display: flex;
+  padding: 10px;
+}
+
+.inputC > img {
+  margin-top: 5px;
+  width: 35px;
+  height: 35px;
+  margin-right: 10px;
+}
+
+.comment-bg {
+  background-color: whitesmoke;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+}

@@ -1,7 +1,7 @@
 import "./Home.css";
 
-const Home = () => {
-  return "Home";
-};
+function Home() {
+  return <div />;
+}
 
 export default Home;
