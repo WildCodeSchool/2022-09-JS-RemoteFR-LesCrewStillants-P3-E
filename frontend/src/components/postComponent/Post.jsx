@@ -2,19 +2,14 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useState } from "react";
 import "./postComponent.css";
+import Modal from "react-modal";
 import gifIcon from "../../assets/images/gif-icon.png";
 import pdfIcon from "../../assets/images/pdf-icon.png";
 import eventIcon from "../../assets/images/event-icon.png";
 import avatarE from "../../assets/images/avatar-e.png";
 import photoIcon from "../../assets/images/photo-icon.png";
-import AddPost from "./AddPost";
 
 function Post() {
-  const [showModalAddPost, setShowModalAddPost] = useState(false);
-
-  const handleClickAddPost = () => {
-    setShowModalAddPost(!showModalAddPost);
-  };
   /*   const [postText, setPostText] = useState("");
    */ const [postMedia, setPostMedia] = useState({
     picture: null,
@@ -22,6 +17,16 @@ function Post() {
     gif: null,
     event: null,
   });
+
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  const handleTextAreaClick = () => {
+    setModalIsOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setModalIsOpen(false);
+  };
 
   // eslint-disable-next-line no-unused-vars
   const handlePostMediaChange = (e) => {
@@ -53,59 +58,110 @@ function Post() {
   return (
     <div className="post-total">
       <form>
-        {showModalAddPost ? (
-          <AddPost handleClickAddPost={handleClickAddPost} />
-        ) : null}
         <div className="user-info">
-          <img src={avatarE} alt="Avatar" />
+          <img className="avatar-post" src={avatarE} alt="Avatar" />
 
           <textarea
             placeholder="Commencer un post"
-            onClick={handleClickAddPost}
+            onClick={handleTextAreaClick}
           />
         </div>
         <div className="media-buttons">
           <label>
-            <input
-              type="file"
-              accept="image/*"
-              name="picture"
-              onChange={handleClickAddPost}
-            />
-            <img className="image-button" src={photoIcon} alt="add-button" />
+            <input type="file" accept="image/*" name="picture" />
+            <span>
+              {" "}
+              <img className="image-button" src={photoIcon} alt="add-button" />
+              Photo / Vidéo
+            </span>
           </label>
           <label>
-            <input
-              type="file"
-              accept="application/pdf"
-              name="pdf"
-              onChange={handleClickAddPost}
-            />
-            <img className="pdf-button" src={pdfIcon} alt="Pdf-button" />
+            <input type="file" accept="application/pdf" name="pdf" />
+            <span>
+              <img className="pdf-button" src={pdfIcon} alt="Pdf-button" />
+              PDF
+            </span>
           </label>
           <label>
-            <input
-              type="file"
-              accept="image/*, video/*"
-              name="gif"
-              onChange={handleClickAddPost}
-            />
-            <img className="gif-button" src={gifIcon} alt="Gif-button" />
+            <input type="file" accept="image/*, video/*" name="gif" />
+            <span>
+              <img className="gif-button" src={gifIcon} alt="Gif-button" />
+              GIF
+            </span>
           </label>
           <label>
-            <input
-              type="file"
-              accept="image/*, video/*"
-              name="event"
-              onChange={handleClickAddPost}
-            />
-            <img
-              className="calendar-button"
-              src={eventIcon}
-              alt="Calendar-button"
-            />
+            <input type="file" accept="image/*, video/*" name="event" />
+            <span>
+              <img
+                className="calendar-button"
+                src={eventIcon}
+                alt="Calendar-button"
+              />
+              Événement
+            </span>
           </label>
         </div>
+        <Modal
+          isOpen={modalIsOpen}
+          onRequestClose={handleCloseModal}
+          className="modal"
+        >
+          <div className="modal-content">
+            <div className="user-modal-info">
+              <img className="modal-avatar-post" src={avatarE} alt="Avatar" />{" "}
+              <span className="modal-user-name">Anthony Estalish</span>
+            </div>
+            <textarea placeholder="Commencer un post" />
+            <div className="media-buttons-modal">
+              {" "}
+              <label>
+                <input type="file" accept="image/*" name="picture" />
+                <span>
+                  {" "}
+                  <img
+                    className="image-button"
+                    src={photoIcon}
+                    alt="add-button"
+                  />
+                  Photo / Vidéo
+                </span>
+              </label>
+              <label>
+                <input type="file" accept="application/pdf" name="pdf" />
+                <span>
+                  <img className="pdf-button" src={pdfIcon} alt="Pdf-button" />
+                  PDF
+                </span>
+              </label>
+              <label>
+                <input type="file" accept="image/*, video/*" name="gif" />
+                <span>
+                  <img className="gif-button" src={gifIcon} alt="Gif-button" />
+                  GIF
+                </span>
+              </label>
+              <label>
+                <input type="file" accept="image/*, video/*" name="event" />
+                <span>
+                  <img
+                    className="calendar-button"
+                    src={eventIcon}
+                    alt="Calendar-button"
+                  />
+                  Événement
+                </span>
+              </label>
+            </div>
+            <div className="post-modal-buttons">
+              <button type="button" onClick={handleCloseModal}>
+                Fermer
+              </button>
+              <button type="submit" onClick={handlePublishPost}>
+                Publier
+              </button>
+            </div>
+          </div>
+        </Modal>
       </form>
     </div>
   );
