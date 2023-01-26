@@ -31,6 +31,7 @@ export default function Login() {
       })
       .then((res) => {
         console.warn(res.data);
+        localStorage.setItem("token", res.data.token);
       })
       .catch((err) => console.warn(err));
   };
