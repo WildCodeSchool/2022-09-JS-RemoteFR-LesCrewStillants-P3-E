@@ -1,22 +1,40 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import jwtDecode from "jwt-decode";
+import axios from "axios";
 import "./postComponent.css";
 import Modal from "react-modal";
 import gifIcon from "../../assets/images/gif-icon.png";
 import pdfIcon from "../../assets/images/pdf-icon.png";
 import eventIcon from "../../assets/images/event-icon.png";
-import avatarE from "../../assets/images/avatar-e.png";
 import photoIcon from "../../assets/images/photo-icon.png";
 
 function Post() {
   /*   const [postText, setPostText] = useState("");
-   */ const [postMedia, setPostMedia] = useState({
+  //  */
+  const [postMedia, setPostMedia] = useState({
     picture: null,
     pdf: null,
     gif: null,
     event: null,
   });
+
+  const [userInfos, setUserInfos] = useState([]);
+  const [userAvatar, setUserAvatar] = useState("");
+
+  const token = jwtDecode(localStorage.getItem("token"));
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:5200/users/${token.id}`)
+      .then((res) => {
+        console.warn(res.data);
+        setUserInfos(res.data);
+        setUserAvatar(res.data.avatar);
+      })
+      .catch((err) => console.warn(err));
+  }, []);
 
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
@@ -59,7 +77,11 @@ function Post() {
     <div className="post-total">
       <form>
         <div className="user-info">
-          <img className="avatar-post" src={avatarE} alt="Avatar" />
+          <img
+            className="avatar-post"
+            src={`http://localhost:5200/avatar/${userAvatar}`}
+            alt="Avatar"
+          />
 
           <textarea
             placeholder="Commencer un post"
@@ -108,8 +130,15 @@ function Post() {
         >
           <div className="modal-content">
             <div className="user-modal-info">
-              <img className="modal-avatar-post" src={avatarE} alt="Avatar" />{" "}
-              <span className="modal-user-name">Anthony Estalish</span>
+              <img
+                className="modal-avatar-post"
+                src={`http://localhost:5200/avatar/${userAvatar}`}
+                alt="Avatar"
+              />{" "}
+              <span className="modal-user-name">
+                {`${userInfos.firstname}`}{" "}
+                <span className="uppercase"> {`${userInfos.lastname}`}</span>
+              </span>
             </div>
             <textarea placeholder="Commencer un post" />
             <div className="media-buttons-modal">

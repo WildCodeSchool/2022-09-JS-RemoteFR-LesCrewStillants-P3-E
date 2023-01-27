@@ -4,12 +4,12 @@ import "./maison.css";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import ChatBubbleOutlineSharpIcon from "@mui/icons-material/ChatBubbleOutlineSharp";
 import InputOption from "./InputOption";
-import Comments from "./comments/Comments";
 
 function PostBody({ name, description, message, date, Img }) {
-  const [showComponent, setShowComponent] = useState(false);
+  const [likes, setLikes] = useState(0);
+
   function handleClick() {
-    setShowComponent(!showComponent);
+    setLikes(likes + 1);
   }
   return (
     <div className="post_body">
@@ -30,19 +30,25 @@ function PostBody({ name, description, message, date, Img }) {
       <div className="Social">
         <div className="Social_left">
           <img src="/public/img/coeur.png" alt="" />
-          <p>10</p>
+          <p>{likes}</p>
         </div>
         <div className="Social_left">
           <img src="/public/img/comment.png" alt="" />
-          <p>88</p>
+          <p>0</p>
         </div>
       </div>
 
       <div className="line-1" />
       <div className="post_button">
-        <InputOption Icon={FavoriteBorderIcon} title="J'aime" color="#343A3F" />
         <div role="button" tabIndex={0} onClick={handleClick}>
-          {showComponent ? <Comments /> : null}
+          {" "}
+          <InputOption
+            Icon={FavoriteBorderIcon}
+            title="J'aime"
+            color="#343A3F"
+          />
+        </div>
+        <div>
           <InputOption
             Icon={ChatBubbleOutlineSharpIcon}
             title="Commenter"

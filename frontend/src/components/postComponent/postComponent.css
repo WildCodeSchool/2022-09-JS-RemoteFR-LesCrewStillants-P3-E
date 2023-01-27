@@ -40,6 +40,9 @@
 .avatar-post {
   margin-left: 1rem;
   margin-right: 0.5rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
 }
 
 .media-buttons {
@@ -179,9 +182,12 @@
 
 .modal-avatar-post {
   margin-right: 0.5rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
 }
 
 .modal-user-name {
-  font-weight: 400;
+  font-weight: 700;
   color: #343a3f;
 }
