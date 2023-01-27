@@ -37,6 +37,11 @@ router.post("/avatar", uploadAvatar.single("avatar"), (req, res) => {
 
 router.get("/users/", userControllers.browse);
 router.get("/users/:id", userControllers.read);
+router.get("/usersregister/:registerkey", userControllers.readregisterkey);
+router.post(
+  "/usersregisterpassword/:registerkey",
+  userControllers.readregisterpassword
+);
 router.post("/users", userControllers.add);
 router.put("/users/:id", userControllers.edit);
 router.put("/users/avatar/:id", userControllers.editAvatar);
