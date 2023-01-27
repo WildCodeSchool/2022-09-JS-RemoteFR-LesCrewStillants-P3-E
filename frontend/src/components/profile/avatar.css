@@ -6,6 +6,7 @@
 .imgAv {
   height: 143px;
   width: 154px;
+  border-radius: 50%;
 }
 
 .changeAv {
