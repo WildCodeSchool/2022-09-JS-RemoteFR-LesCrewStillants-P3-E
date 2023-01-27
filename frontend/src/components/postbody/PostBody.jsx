@@ -8,9 +8,22 @@ import Comments from "./comments/Comments";
 
 function PostBody({ name, description, message, date, Img }) {
   const [showComponent, setShowComponent] = useState(false);
+  const [likes, setLikes] = useState(0);
+  // const [userLiked, setUserLiked] = useState(false);
+
   function handleClick() {
     setShowComponent(!showComponent);
   }
+
+  const handleLike = () => {
+    setLikes(likes + 1);
+  };
+
+  // useEffect(() => {
+  // check if current user liked the post
+  // checkIfUserLiked();
+  // }, []);
+
   return (
     <div className="post_body">
       <div className="post_head">
@@ -30,19 +43,29 @@ function PostBody({ name, description, message, date, Img }) {
       <div className="Social">
         <div className="Social_left">
           <img src="/public/img/coeur.png" alt="" />
-          <p>10</p>
+          <p>{likes}</p>
         </div>
         <div className="Social_left">
           <img src="/public/img/comment.png" alt="" />
-          <p>88</p>
+          <p>0</p>
         </div>
       </div>
 
       <div className="line-1" />
       <div className="post_button">
-        <InputOption Icon={FavoriteBorderIcon} title="J'aime" color="#343A3F" />
+        <div onClick={handleLike} role="button" tabIndex={0} className="Like">
+          <InputOption
+            Icon={FavoriteBorderIcon}
+            title="J'aime"
+            color="#343A3F"
+          />
+        </div>
         <div role="button" tabIndex={0} onClick={handleClick}>
-          {showComponent ? <Comments /> : null}
+          {showComponent ? (
+            <div className="modal">
+              <Comments />
+            </div>
+          ) : null}
           <InputOption
             Icon={ChatBubbleOutlineSharpIcon}
             title="Commenter"

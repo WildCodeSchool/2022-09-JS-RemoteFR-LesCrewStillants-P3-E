@@ -1,4 +1,4 @@
-import React from "react";
+import { useState } from "react";
 import "./comment.css";
 import FormComment from "./FormComment";
 
@@ -11,6 +11,7 @@ function Comment({
   addComment,
   parentId = null,
 }) {
+  const [likes, setLikes] = useState(0);
   const canReply = Boolean(currentUserId);
   const createdAt = new Date(comment.createdAt).toLocaleDateString();
   const isReplying =
@@ -18,6 +19,10 @@ function Comment({
     activeComment.id === comment.id &&
     activeComment.type === "replying";
   const replyId = parentId || comment.id;
+
+  const handleLike = () => {
+    setLikes(likes + 1);
+  };
 
   return (
     <div className="comment">
@@ -33,7 +38,17 @@ function Comment({
           <div className="comment-text">{comment.body}</div>
         </div>
         <div className="comment-actions">
-          <div className="comment-action">J'aime</div>
+          <div
+            className="comment-action"
+            onClick={handleLike}
+            role="button"
+            tabIndex={0}
+          >
+            J'aime
+          </div>
+          <div className="font-semibold mr-2 text-red-700">
+            {likes >= 1 ? <p>{likes}</p> : null}
+          </div>
           {canReply && (
             <div
               role="button"
