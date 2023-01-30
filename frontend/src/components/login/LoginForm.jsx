@@ -22,7 +22,7 @@ export default function LoginForm() {
     const password = event.target.elements[1].value;
 
     instanceAxios
-      .post("/auth/login", {
+      .post(`/auth/login`, {
         mail,
         password,
       })

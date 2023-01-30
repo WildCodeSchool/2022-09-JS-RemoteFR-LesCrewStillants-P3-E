@@ -4,7 +4,6 @@ const path = require("path");
 const cors = require("cors");
 const router = require("./router/router");
 const routerAuth = require("./router/auth");
-const routerPublication = require("./router/publication");
 
 const app = express();
 
@@ -27,7 +26,6 @@ app.use(express.static(path.join(__dirname, "..", "..", "frontend", "dist")));
 // API routes
 app.use(router);
 app.use("/auth", routerAuth);
-app.use("/publication", routerPublication);
 
 // Redirect all requests to the REACT app
 const reactIndexFile = path.join(
