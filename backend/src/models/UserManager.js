@@ -5,9 +5,9 @@ class UserManager extends AbstractManager {
     super({ table: "user" });
   }
 
-  add(user) {
+  add(user, registerKey) {
     return this.connection.query(
-      `insert into ${this.table} (firstname, lastname, address, mail, phone, password, avatar) VALUES (?,?,?,?,?,?,?)`,
+      `insert into ${this.table} (firstname, lastname, address, mail, phone, register_key) VALUES (?,?,?,?,?,?)`,
       [
         user.firstname,
         user.lastname,
@@ -16,6 +16,7 @@ class UserManager extends AbstractManager {
         user.phone,
         user.password,
         user.avatar,
+        registerKey,
       ]
     );
   }
@@ -33,6 +34,13 @@ class UserManager extends AbstractManager {
     );
   }
 
+  findUserByRegisterKey(registerkey) {
+    return this.connection.query(
+      `select * from ${this.table} where register_key = ?`,
+      [registerkey]
+    );
+  }
+
   getAllUsers() {
     return this.connection.query(
       `select firstname, lastname, mail, avatar from ${this.table}`
@@ -41,8 +49,22 @@ class UserManager extends AbstractManager {
 
   update(user) {
     return this.connection.query(
-      `update ${this.table} set firstname = ?, lastname = ?, mail = ?, avatar = ? where id = ?`,
-      [user.firstname, user.lastname, user.mail, user.avatar, user.id]
+      `update ${this.table} set firstname = ?, lastname = ?, mail = ?, password = ?, avatar = ? where id = ?`,
+      [
+        user.firstname,
+        user.lastname,
+        user.mail,
+        user.password,
+        user.avatar,
+        user.id,
+      ]
+    );
+  }
+
+  createPassword(user) {
+    return this.connection.query(
+      `update ${this.table} set password = ?, register_key = NULL where id = ?`,
+      [user.passHash, user.id]
     );
   }
 }
