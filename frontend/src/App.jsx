@@ -52,6 +52,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/login/:registerkey" element={<Login />} />
         <Route path="/feed" element={<Feed />} />
         <Route path="/admin/" element={<AdminHome />} />
         <Route
