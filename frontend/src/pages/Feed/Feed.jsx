@@ -8,7 +8,6 @@ import fakeFeed from "../../assets/images/fake-feed.png";
 
 export default function Feed() {
   const token = jwtDecode(localStorage.getItem("token"));
-  console.warn(token);
 
   return (
     <>
