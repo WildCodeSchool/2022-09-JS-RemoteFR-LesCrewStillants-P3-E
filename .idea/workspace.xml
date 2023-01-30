@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="79a19e80-827e-4750-b3ed-4bd0b46c05ff" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/profile/CardProfile/CardProfile.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/profile/CardProfile/CardProfile.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/postComponent/postComponent.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/postComponent/postComponent.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/profile/Profile.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/profile/Profile.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/pages/profile/ProfileFake.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/profile/ProfileFake.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
