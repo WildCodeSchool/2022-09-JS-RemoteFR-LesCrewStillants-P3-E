@@ -1,15 +1,12 @@
 const express = require("express");
-
 const fs = require("fs");
-
 const multer = require("multer");
-
-// eslint-disable-next-line import/no-unresolved
-const { v4: uuidv4 } = require("uuid");
-
-const upload = multer({ dest: "uploads/" });
+const path = require("path");
 
 const router = express.Router();
+
+const DEST = path.join(__dirname, "..", "..", "public", "avatar");
+const uploadAvatar = multer({ dest: DEST });
 
 const itemControllers = require("../controllers/itemControllers");
 const userControllers = require("../controllers/userControllers");
@@ -21,12 +18,14 @@ router.get("/items/:id", itemControllers.read);
 router.put("/items/:id", itemControllers.edit);
 router.post("/items", itemControllers.add);
 router.delete("/items/:id", itemControllers.destroy);
-router.post("/avatar", upload.single("avatar"), (req, res) => {
+router.post("/avatar", uploadAvatar.single("avatar"), (req, res) => {
+  const { userId } = req.body;
   const { originalname } = req.file;
   const { filename } = req.file;
+
   fs.rename(
-    `uploads/${filename}`,
-    `uploads/${uuidv4()}-${originalname}`,
+    `public/avatar/${filename}`,
+    `public/avatar/${userId}-${originalname}`,
     (err) => {
       if (err) throw err;
       res.send("File uploaded");
@@ -38,9 +37,14 @@ router.post("/avatar", upload.single("avatar"), (req, res) => {
 
 router.get("/users/", userControllers.browse);
 router.get("/users/:id", userControllers.read);
+router.get("/usersregister/:registerkey", userControllers.readregisterkey);
+router.post(
+  "/usersregisterpassword/:registerkey",
+  userControllers.readregisterpassword
+);
 router.post("/users", userControllers.add);
 router.put("/users/:id", userControllers.edit);
-router.patch("/users/:id", userControllers.edit);
+router.put("/users/avatar/:id", userControllers.editAvatar);
 router.delete("/users/:id", userControllers.destroy);
 
 // Teams routes

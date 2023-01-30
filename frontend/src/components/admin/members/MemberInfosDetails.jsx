@@ -7,20 +7,20 @@ export default function MembersInfosDetails({ userInfos }) {
           <tr>
             <th>Nom, Prénom:</th>
             <td>
-              {userInfos.lastName} {userInfos.firstName}
+              {userInfos.lastname} {userInfos.firstname}
             </td>
           </tr>
           <tr>
             <th>Adresse</th>
-            <td>15 rue du remote, 12922 WCS</td>
+            <td>{userInfos.address}</td>
           </tr>
           <tr>
             <th>Email</th>
-            <td>anthony.gorski@mail.fr</td>
+            <td>{userInfos.mail}</td>
           </tr>
           <tr>
             <th>Téléphone</th>
-            <td>06.06.07.08.09</td>
+            <td>{userInfos.phone}</td>
           </tr>
         </table>
       </div>

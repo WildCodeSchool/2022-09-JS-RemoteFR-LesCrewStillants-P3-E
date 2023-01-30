@@ -1,15 +1,25 @@
 import { useRef } from "react";
 import axios from "axios";
 
-export default function ChangeAvatar({ handleCluck }) {
+export default function ChangeAvatar({ handleCluck, token }) {
   const refContainer = useRef("");
   const hSubmit = (evt) => {
     evt.preventDefault();
 
     const formData = new FormData();
     formData.append("avatar", refContainer.current.files[0]);
+    formData.append("userId", token.id);
 
-    axios.post("http://localhost:5200", formData);
+    axios.post("http://localhost:5200/avatar", formData);
+
+    axios
+      .put(`http://localhost:5200/users/avatar/${token.id}`, {
+        avatar: `${token.id}-${refContainer.current.files[0].name}`,
+      })
+      .then((res) => {
+        console.warn(res.data);
+      })
+      .catch((err) => console.warn(err));
   };
   return (
     <div className="modal justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">

@@ -1,3 +1,4 @@
+import React from "react";
 import RightBar from "../components/rightBar/Rightbar";
 import LeftBar from "../components/leftBar/LeftBar";
 import PostBody from "../components/postbody/PostBody";
@@ -5,6 +6,7 @@ import Header from "../components/header/Header";
 import Comments from "../components/postbody/comments/Comments";
 import "../components/postbody/maison.css";
 import "./Home.css";
+import Post from "../components/postComponent/Post";
 
 export default function Home() {
   return (
@@ -16,6 +18,7 @@ export default function Home() {
           <LeftBar />
         </div>
         <div className="middle">
+          <Post />
           <PostBody
             name="Elie Partenay"
             description="directeur admin"
