@@ -10,10 +10,10 @@ export default function ChangeAvatar({ handleCluck, token }) {
     formData.append("avatar", refContainer.current.files[0]);
     formData.append("userId", token.id);
 
-    axios.post("http://localhost:5200/avatar", formData);
+    axios.post(`${import.meta.env.VITE_BACKEND_URL}/avatar`, formData);
 
     axios
-      .put(`http://localhost:5200/users/avatar/${token.id}`, {
+      .put(`${import.meta.env.VITE_BACKEND_URL}/avatar/${token.id}`, {
         avatar: `${token.id}-${refContainer.current.files[0].name}`,
       })
       .then((res) => {

@@ -4,8 +4,8 @@ const router = express.Router();
 
 const PublicationControllers = require("../controllers/PublicationControllers");
 
-router.post("/create", PublicationControllers.create);
-router.get("/browse", PublicationControllers.browse);
-router.put("/destroy/:id", PublicationControllers.destroy);
+router.post("/posts/create", PublicationControllers.create);
+router.get("/posts/browse", PublicationControllers.browse);
+router.put("/posts/destroy/:id", PublicationControllers.destroy);
 
 module.exports = router;

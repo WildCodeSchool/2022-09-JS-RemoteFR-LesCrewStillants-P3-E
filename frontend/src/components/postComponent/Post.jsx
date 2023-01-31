@@ -27,9 +27,8 @@ function Post() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5200/users/${token.id}`)
+      .get(`${import.meta.env.VITE_BACKEND_URL}/users/${token.id}`)
       .then((res) => {
-        console.warn(res.data);
         setUserInfos(res.data);
         setUserAvatar(res.data.avatar);
       })
@@ -60,7 +59,7 @@ function Post() {
     postData.append("pdf", postMedia.pdf);
     postData.append("gif", postMedia.gif);
     postData.append("event", postMedia.event);
-    fetch("/api/publishpost", {
+    fetch("/posts/create", {
       method: "POST",
       body: postData,
     })
@@ -79,7 +78,7 @@ function Post() {
         <div className="user-info">
           <img
             className="avatar-post"
-            src={`http://localhost:5200/avatar/${userAvatar}`}
+            src={`${import.meta.env.VITE_BACKEND_URL}/avatar/${userAvatar}`}
             alt="Avatar"
           />
 
@@ -132,7 +131,7 @@ function Post() {
             <div className="user-modal-info">
               <img
                 className="modal-avatar-post"
-                src={`http://localhost:5200/avatar/${userAvatar}`}
+                src={`${import.meta.env.VITE_BACKEND_URL}/avatar/${userAvatar}`}
                 alt="Avatar"
               />{" "}
               <span className="modal-user-name">
