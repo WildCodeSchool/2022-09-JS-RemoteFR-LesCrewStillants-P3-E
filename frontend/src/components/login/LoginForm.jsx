@@ -2,7 +2,7 @@ import { useState } from "react";
 import "@assets/css/login.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRightToBracket } from "@fortawesome/free-solid-svg-icons";
-import instanceAxios from "../../services/axios";
+import axios from "axios";
 
 export default function LoginForm() {
   const [email, setEmail] = useState("");
@@ -21,8 +21,8 @@ export default function LoginForm() {
     const mail = event.target.elements[0].value;
     const password = event.target.elements[1].value;
 
-    instanceAxios
-      .post("/auth/login", {
+    axios
+      .post(`${import.meta.env.VITE_BACKEND_URL}/auth/login`, {
         mail,
         password,
       })
