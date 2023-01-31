@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link, useParams } from "react-router-dom";
-import axios from "axios";
 import {
   faNewspaper,
   faArrowLeft,
@@ -10,6 +9,7 @@ import {
   faEye,
   faTrash,
 } from "@fortawesome/free-solid-svg-icons";
+import PublicationDelete from "@components/admin/publication/PublicationDelete";
 
 // Services
 import findDateDistanceStrict from "@services/dates/findDateDistanceStrict";
@@ -30,6 +30,8 @@ export default function ArticlesId() {
   const { id } = useParams();
 
   const [articleDetails, setArticlesDetails] = useState([]);
+  const [showModalPublicationDelete, setShowModalPublicationDelete] =
+    useState(false);
 
   // Find fake data
   const articleView = findArticlesView(+id);
@@ -40,15 +42,8 @@ export default function ArticlesId() {
     setShowInteraction(e);
   };
 
-  const handleClickPublicationDelete = () => {
-    axios.put(`${import.meta.env.VITE_BACKEND_URL}/publication/${id}`).then(
-      (response) => {
-        console.warn(response);
-      },
-      (error) => {
-        console.error(error);
-      }
-    );
+  const handleClickShowModalPublicationDelete = () => {
+    setShowModalPublicationDelete(!showModalPublicationDelete);
   };
 
   useEffect(() => {
@@ -62,6 +57,13 @@ export default function ArticlesId() {
 
   return (
     <div className="admin">
+      {showModalPublicationDelete ? (
+        <PublicationDelete
+          handleClickShowModalPublicationDelete={
+            handleClickShowModalPublicationDelete
+          }
+        />
+      ) : null}
       <NavLeft elemActive="articles" />
       <main>
         <Header />
@@ -95,13 +97,13 @@ export default function ArticlesId() {
                 </div>
               </div>
               <div>{articleDetails.text}</div>
-              <Link
-                onClick={handleClickPublicationDelete}
+              <button
+                type="button"
+                onClick={handleClickShowModalPublicationDelete}
                 className="bg-red-500 text-white text-sm p-3 rounded bold float-right mt-6"
-                to="/admin/articles"
               >
                 <FontAwesomeIcon icon={faTrash} /> Supprimer la publication
-              </Link>
+              </button>
             </div>
 
             <div className="w-1/4">

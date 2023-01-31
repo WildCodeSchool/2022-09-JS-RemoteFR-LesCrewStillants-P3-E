@@ -138,7 +138,7 @@ const add = (req, res) => {
         );
       mailer.sendMail(
         {
-          from: "notitia@musicwizz.fr",
+          from: process.env.SMTP_EXP_MAIL,
           to: user.mail,
           subject: "Bienvenue sur Notitia",
           text: "Hello world",
