@@ -1,0 +1,63 @@
+.card-profile {
+  margin-top: 2rem;
+  line-height: 1rem;
+  display: flex;
+}
+
+.card-profile-avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-profile-avatar img {
+  width: 10rem;
+  border-radius: 5rem;
+}
+
+.card-profile-block {
+  margin-left: 1rem;
+  width: 30rem;
+  background-color: #fff;
+  border-radius: 1rem;
+  text-align: left;
+}
+
+.card-profile-firstname {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  color: #626262;
+}
+
+.card-profile-lastname {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-top: 0.5rem;
+  margin-left: 1rem;
+  color: #165dba;
+}
+
+.card-profile-job {
+  font-size: 1rem;
+  margin-left: 1rem;
+  margin-top: 0.8rem;
+  color: #96cd32;
+  font-style: italic;
+}
+
+.card-profile-email {
+  font-size: 1rem;
+  margin-left: 1rem;
+  margin-top: 0.8rem;
+  color: #626262;
+}
+
+.card-profile-phone {
+  font-size: 1rem;
+  margin-left: 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+  color: #626262;
+}

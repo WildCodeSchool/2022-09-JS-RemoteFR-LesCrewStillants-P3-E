@@ -13,6 +13,7 @@ import ArticlesId from "./pages/administration/ArticlesId";
 import MembersId from "./pages/administration/MembersId";
 import Profile from "./pages/profile/Profile";
 import Feed from "./pages/Feed/Feed";
+import ProfileFake from "./pages/profile/ProfileFake";
 
 // import Layout from "./services/Layout";
 import "./App.css";
@@ -29,24 +30,6 @@ function App() {
     }
     return <Navigate to="/login" />;
   }
-  // Create route and disposition for homepage and profile page
-  // const router = createBrowserRouter([
-  //   {
-  //     path: "/",
-  //     element: <Home />,
-  //     children: [
-  //       {
-  //         path: "profile/:id",
-  //         element: (
-  //           <ProtectedRoute>
-  //             <Profile />
-  //           </ProtectedRoute>
-  //         ),
-  //       },
-  //       { path: "login", element: <Login /> },
-  //     ],
-  //   },
-  // ]);
   return (
     <div className="App">
       <Routes>
@@ -73,6 +56,7 @@ function App() {
           path="/admin/members/:id"
           element={<MembersId fakeMembersList={fakeMembersList} />}
         />
+        <Route path="/profileFake" element={<ProfileFake />} />
         <Route
           path="/profile/:id"
           element={
