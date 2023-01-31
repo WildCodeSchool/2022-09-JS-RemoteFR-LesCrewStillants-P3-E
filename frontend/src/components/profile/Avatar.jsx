@@ -13,7 +13,7 @@ function Avatar({ token }) {
   const handleCluck = () => {
     setShowModalAvatar(!showModalAvatar);
     axios
-      .get(`http://localhost:5200/users/${token.id}`)
+      .get(`${import.meta.env.VITE_BACKEND_URL}/users/${token.id}`)
       .then((res) => {
         console.warn(res.data);
         setUserAvatar(res.data.avatar);
@@ -30,7 +30,9 @@ function Avatar({ token }) {
       <div className="avtar">
         <img
           src={
-            userAvatar ? `http://localhost:5200/avatar/${userAvatar}` : nopic
+            userAvatar
+              ? `${import.meta.env.VITE_BACKEND_URL}/avatar/${userAvatar}`
+              : nopic
           }
           alt="avatar"
           className="imgAv"
