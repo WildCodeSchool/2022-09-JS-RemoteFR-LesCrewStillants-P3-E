@@ -12,6 +12,7 @@ const itemControllers = require("../controllers/itemControllers");
 const userControllers = require("../controllers/userControllers");
 const teamControllers = require("../controllers/teamControllers");
 const roleControllers = require("../controllers/roleControllers");
+const PublicationControllers = require("../controllers/PublicationControllers");
 
 router.get("/items", itemControllers.browse);
 router.get("/items/:id", itemControllers.read);
@@ -63,5 +64,11 @@ router.post("/roles", roleControllers.add);
 router.put("/roles/:id", roleControllers.edit);
 router.patch("/roles/:id", roleControllers.edit);
 router.delete("/roles/:id", roleControllers.destroy);
+
+// Publication routes
+router.post("/publication", PublicationControllers.create);
+router.get("/publication", PublicationControllers.browse);
+router.get("/publication/:id", PublicationControllers.read);
+router.put("/publication/:id", PublicationControllers.destroy);
 
 module.exports = router;

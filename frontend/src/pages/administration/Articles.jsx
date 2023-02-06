@@ -10,7 +10,7 @@ import {
 
 // Services
 import findDateDistanceStrict from "@services/dates/findDateDistanceStrict";
-import findUser from "@services/users/findUser";
+import formatDate from "@services/dates/formatDate";
 import findArticlesView from "@services/articles/findArticlesView";
 import findArticlesComment from "@services/articles/findArticlesComment";
 import findArticlesLike from "@services/articles/findArticlesLike";
@@ -23,19 +23,12 @@ import nopicture from "../../assets/images/nopicture.png";
 export default function Articles() {
   const [articlesList, setArticlesListe] = useState([]);
 
-  const formatDate = (date) => {
-    return `${new Date(date)
-      .toLocaleDateString("fr-FR")
-      .split("/")
-      .reverse()
-      .join("-")} ${new Date(date).toLocaleTimeString("fr-FR")}`;
-  };
-
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_BACKEND_URL}/publication/browse`)
+    fetch(`${import.meta.env.VITE_BACKEND_URL}/publication`)
       .then((response) => response.json())
       .then((data) => {
-        setArticlesListe(data);
+        console.warn(data);
+        setArticlesListe(data.filter((e) => e.is_deleted === 0));
       });
   }, []);
   return (
@@ -55,9 +48,7 @@ export default function Articles() {
                       <img className="w-12 mr-4" src={nopicture} alt="member" />
                     </div>
                     <div>
-                      <div className="text-xl font-bold">{`${
-                        findUser(e.user_id).firstName
-                      } ${findUser(e.user_id).lastName}`}</div>
+                      <div className="text-xl font-bold">{`${e.firstname} ${e.lastname}`}</div>
                       <div className="text-sm italic text-zinc-400">
                         {e.groupe}
                       </div>

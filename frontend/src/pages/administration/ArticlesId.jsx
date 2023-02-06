@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link, useParams } from "react-router-dom";
 import {
@@ -7,7 +7,9 @@ import {
   faHeart,
   faMessage,
   faEye,
+  faTrash,
 } from "@fortawesome/free-solid-svg-icons";
+import PublicationDelete from "@components/admin/publication/PublicationDelete";
 
 // Services
 import findDateDistanceStrict from "@services/dates/findDateDistanceStrict";
@@ -15,7 +17,7 @@ import findUser from "@services/users/findUser";
 import findArticlesView from "@services/articles/findArticlesView";
 import findArticlesComment from "@services/articles/findArticlesComment";
 import findArticlesLike from "@services/articles/findArticlesLike";
-import findArticles from "@services/articles/findArticles";
+import formatDate from "@services/dates/formatDate";
 
 // Components
 import Header from "../../components/admin/Header";
@@ -27,19 +29,41 @@ export default function ArticlesId() {
   const [showInteraction, setShowInteraction] = useState("view");
   const { id } = useParams();
 
+  const [articleDetails, setArticlesDetails] = useState([]);
+  const [showModalPublicationDelete, setShowModalPublicationDelete] =
+    useState(false);
+
   // Find fake data
-  const articleDetails = findArticles(+id);
   const articleView = findArticlesView(+id);
   const articleComment = findArticlesComment(+id);
   const articleLike = findArticlesLike(+id);
-  const articleUser = findUser(articleDetails.userid);
 
   const hundleClickChangeInteraction = (e) => {
     setShowInteraction(e);
   };
 
+  const handleClickShowModalPublicationDelete = () => {
+    setShowModalPublicationDelete(!showModalPublicationDelete);
+  };
+
+  useEffect(() => {
+    fetch(`${import.meta.env.VITE_BACKEND_URL}/publication/${id}`)
+      .then((response) => response.json())
+      .then((data) => {
+        setArticlesDetails(data);
+        console.warn(data.date);
+      });
+  }, []);
+
   return (
     <div className="admin">
+      {showModalPublicationDelete ? (
+        <PublicationDelete
+          handleClickShowModalPublicationDelete={
+            handleClickShowModalPublicationDelete
+          }
+        />
+      ) : null}
       <NavLeft elemActive="articles" />
       <main>
         <Header />
@@ -61,16 +85,25 @@ export default function ArticlesId() {
                   <img className="w-12 mr-4" src={nopicture} alt="member" />
                 </div>
                 <div>
-                  <div className="text-xl font-bold">{`${articleUser.firstName} ${articleUser.lastName}`}</div>
+                  <div className="text-xl font-bold">{`${articleDetails.firstname} ${articleDetails.lastname}`}</div>
                   <div className="text-sm italic text-zinc-400">
                     {articleDetails.groupe}
                   </div>
                   <div className="text-sm text-zinc-400">
-                    {findDateDistanceStrict(articleDetails.date)}
+                    {articleDetails.date
+                      ? findDateDistanceStrict(formatDate(articleDetails.date))
+                      : null}
                   </div>
                 </div>
               </div>
               <div>{articleDetails.text}</div>
+              <button
+                type="button"
+                onClick={handleClickShowModalPublicationDelete}
+                className="bg-red-500 text-white text-sm p-3 rounded bold float-right mt-6"
+              >
+                <FontAwesomeIcon icon={faTrash} /> Supprimer la publication
+              </button>
             </div>
 
             <div className="w-1/4">
