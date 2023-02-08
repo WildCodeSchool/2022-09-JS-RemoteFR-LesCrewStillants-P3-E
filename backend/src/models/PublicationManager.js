@@ -1,3 +1,5 @@
+/* eslint-disable camelcase */
+
 const AbstractManager = require("./AbstractManager");
 
 class PublicationManager extends AbstractManager {
@@ -7,21 +9,21 @@ class PublicationManager extends AbstractManager {
 
   findAllWithUser() {
     return this.connection.query(
-      `select p.*, u.id as userid, u.firstname, u.lastname from  ${this.table} as p JOIN user as u ON u.id = p.user_id`
+      `select p.*, u.id as userid, u.firstname, u.lastname, u.fonction from  ${this.table} as p JOIN user as u ON u.id = p.user_id ORDER BY p.id DESC`
     );
   }
 
-  findById(id) {
+  findById(user_id) {
     return this.connection.query(
-      `select * from  ${this.table} as p JOIN user as u ON p.id = ? AND p.user_id = u.id`,
-      [id]
+      `select p.*, u.firstname, u.lastname, u.fonction from  ${this.table} as p JOIN user as u ON u.id = p.user_id AND p.user_id = ? ORDER BY p.id DESC`,
+      [user_id]
     );
   }
 
   create(publication) {
     return this.connection.query(
-      `insert into ${this.table} (title, text, user_id) VALUES (?,?,?)`,
-      [publication.title, publication.text, publication.user_id]
+      `insert into ${this.table} (date, text, user_id) VALUES (now(),?,?)`,
+      [publication.text, publication.user_id]
     );
   }
 
