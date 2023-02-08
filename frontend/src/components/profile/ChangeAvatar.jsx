@@ -13,11 +13,8 @@ export default function ChangeAvatar({ handleCluck, token }) {
     axios.post(`${import.meta.env.VITE_BACKEND_URL}/avatar`, formData);
 
     axios
-      .put(`${import.meta.env.VITE_BACKEND_URL}/avatar/${token.id}`, {
+      .put(`${import.meta.env.VITE_BACKEND_URL}/users/${token.id}`, {
         avatar: `${token.id}-${refContainer.current.files[0].name}`,
-      })
-      .then((res) => {
-        console.warn(res.data);
       })
       .catch((err) => console.warn(err));
   };
