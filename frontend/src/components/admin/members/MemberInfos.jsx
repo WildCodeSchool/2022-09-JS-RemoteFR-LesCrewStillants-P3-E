@@ -13,7 +13,9 @@ export default function MembersInfos({ userInfos }) {
           <div className="memberName">
             {userInfos.firstname}{" "}
             <span className="member_lastName">{userInfos.lastname}</span>{" "}
-            <span className="member_status">Responsable</span>
+            <span className="member_status">
+              {userInfos.fonction ? userInfos.fonction : "Ouvrier"}
+            </span>
           </div>
           <div className="member_stats">
             <div>
