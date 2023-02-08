@@ -1,4 +1,4 @@
-import { Route, Routes, Navigate } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 // Fake Data
 import fakeMembersList from "@assets/data/fakeUser.json";
@@ -13,7 +13,6 @@ import ArticlesId from "./pages/administration/ArticlesId";
 import MembersId from "./pages/administration/MembersId";
 import Profile from "./pages/profile/Profile";
 import Feed from "./pages/Feed/Feed";
-import ProfileFake from "./pages/profile/ProfileFake";
 
 // import Layout from "./services/Layout";
 import "./App.css";
@@ -21,15 +20,6 @@ import "./App.css";
 function App() {
   // Protected lecture of homepage
 
-  const currentUser = false;
-
-  // eslint-disable-next-line react/no-unstable-nested-components,react/prop-types
-  function ProtectedRoute({ children }) {
-    if (currentUser) {
-      return children;
-    }
-    return <Navigate to="/login" />;
-  }
   return (
     <div className="App">
       <Routes>
@@ -56,15 +46,7 @@ function App() {
           path="/admin/members/:id"
           element={<MembersId fakeMembersList={fakeMembersList} />}
         />
-        <Route path="/profileFake" element={<ProfileFake />} />
-        <Route
-          path="/profile/:id"
-          element={
-            <ProtectedRoute>
-              <Profile />
-            </ProtectedRoute>
-          }
-        />
+        <Route path="/profile/:id" element={<Profile />} />
       </Routes>
     </div>
   );

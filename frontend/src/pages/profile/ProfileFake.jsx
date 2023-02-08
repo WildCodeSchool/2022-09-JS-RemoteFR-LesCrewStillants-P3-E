@@ -1,13 +1,28 @@
 import "./Profile.css";
 import React from "react";
+import axios from "axios";
+import { useParams } from "react-router-dom";
 import Header from "@components/header/Header";
 import LeftBar from "@components/leftBar/LeftBar";
 import Post from "@components/postComponent/Post";
 import Rightbar from "@components/rightBar/Rightbar";
 import CardProfile from "@components/profile/CardProfile/CardProfile";
 import PostBody from "@components/postbody/PostBody";
+import findDateDistanceStrict from "@services/dates/findDateDistanceStrict";
+import formatDate from "@services/dates/formatDate";
 
 function ProfileFake() {
+  const { id } = useParams();
+
+  const [posts, setPosts] = React.useState([]);
+  React.useEffect(() => {
+    axios
+      .get(`${import.meta.env.VITE_BACKEND_URL}/publication/${id}`)
+      .then((res) => {
+        setPosts(res.data);
+      });
+  }, []);
+
   return (
     <div>
       <Header />
@@ -22,15 +37,15 @@ function ProfileFake() {
             <h2>Mes Publications</h2>
           </div>
           <Post />
-          <PostBody
-            name="Elie Partenay"
-            description="directeur admin"
-            message="Le fichier de prévention pour l’année 2023 est sorti. Il est nécessaire
-        que celui-ci soit à jour pour permettre une meilleure réactivité lors
-        d’un incident. Je compte sur vous pour vérifier et modifier les
-        informations si nécessaire"
-            date="6h"
-          />
+          {posts.map((post) => (
+            <PostBody
+              name={`${post.firstname} ${post.lastname}`}
+              description={post.fonction}
+              message={post.text}
+              Img={post.avatar}
+              date={findDateDistanceStrict(formatDate(post.date))}
+            />
+          ))}
         </div>
         <div className="right" />
         <Rightbar />

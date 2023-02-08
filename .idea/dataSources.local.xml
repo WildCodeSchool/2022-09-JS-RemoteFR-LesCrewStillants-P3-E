@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal" created-in="WS-223.8214.51">
+    <data-source name="u833089582_enedis@109.106.246.101" uuid="9405c7db-36b2-4967-8c24-cb98f2e6de40">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MYSQL" exact-version="0" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>u833089582_enedis</user-name>
+      <schema-mapping />
+    </data-source>
+  </component>
+</project>
