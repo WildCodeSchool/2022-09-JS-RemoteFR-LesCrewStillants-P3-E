@@ -20,6 +20,7 @@ class UserManager extends AbstractManager {
   }
 
   findMail(mail) {
+
     return this.connection.query(`select * from ${this.table} where mail = ?`, [
       mail,
     ]);
@@ -56,6 +57,13 @@ class UserManager extends AbstractManager {
         user.avatar,
         user.id,
       ]
+    );
+  }
+
+  updateAvatar(user) {
+    return this.connection.query(
+      `update ${this.table} set avatar = ? where id = ?`,
+      [user.avatar, user.id]
     );
   }
 

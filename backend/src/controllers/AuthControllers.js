@@ -26,7 +26,7 @@ const login = async (req, res) => {
     const { mail, password } = req.body;
     const [[user]] = await model.user.findMail(mail);
 
-    if (!user) {
+    if (![user]) {
       return res.status(403).json({ error: "User not Found" });
     }
 

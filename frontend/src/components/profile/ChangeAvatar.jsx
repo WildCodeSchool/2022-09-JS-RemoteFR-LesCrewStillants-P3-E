@@ -16,9 +16,6 @@ export default function ChangeAvatar({ handleCluck, token }) {
       .put(`${import.meta.env.VITE_BACKEND_URL}/users/avatar/${token.id}`, {
         avatar: `${token.id}-${refContainer.current.files[0].name}`,
       })
-      .then((res) => {
-        console.warn(res.data);
-      })
       .catch((err) => console.warn(err));
   };
   return (
