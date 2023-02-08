@@ -67,26 +67,22 @@ const edit = async (req, res) => {
   }
 };
 
-const editAvatar = async (req, res) => {
-  const { avatar } = req.body;
+const editAvatar = (req, res) => {
+  const user = models.user.findUser(parseInt(req.params.id, 10));
 
-  const id = parseInt(req.params.id, 10);
-
-  const [[userInfo]] = await models.user.findUser(id);
-
-  const user = {
-    ...userInfo,
-    id,
-    avatar,
-  };
-
-  const [updateUser] = await models.user.update(user);
-
-  if (updateUser.affectedRows === 0) {
-    res.sendStatus(500);
-  } else {
-    res.sendStatus(204);
-  }
+  models.user
+    .updateAvatar(user)
+    .then(([result]) => {
+      if (result.affectedRows === 0) {
+        res.sendStatus(404);
+      } else {
+        res.sendStatus(204);
+      }
+    })
+    .catch((err) => {
+      console.error(err);
+      res.sendStatus(500);
+    });
 };
 
 const readregisterpassword = async (req, res) => {

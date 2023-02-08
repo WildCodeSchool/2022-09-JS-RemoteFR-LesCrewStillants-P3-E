@@ -6,14 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="79a19e80-827e-4750-b3ed-4bd0b46c05ff" name="Changes" comment="Remove localhost and replace with import env">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/controllers/PublicationControllers.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/controllers/PublicationControllers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/models/PublicationManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/models/PublicationManager.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/controllers/AuthControllers.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/controllers/AuthControllers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/controllers/userControllers.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/controllers/userControllers.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/models/UserManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/models/UserManager.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/profile/CardProfile/CardProfile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/profile/CardProfile/CardProfile.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/profile/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/profile/Profile.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/profile/ProfileFake.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/profile/ProfileFake.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/login/LoginForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/login/LoginForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/profile/ChangeAvatar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/profile/ChangeAvatar.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
