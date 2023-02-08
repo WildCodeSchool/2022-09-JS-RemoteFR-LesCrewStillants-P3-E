@@ -7,7 +7,7 @@ class PublicationManager extends AbstractManager {
 
   findAllWithUser() {
     return this.connection.query(
-      `select p.*, u.id as userid, u.firstname, u.lastname from  ${this.table} as p JOIN user as u ON u.id = p.user_id`
+      `select p.*, u.id as userid, u.firstname, u.lastname, u.fonction from  ${this.table} as p JOIN user as u ON u.id = p.user_id ORDER BY p.id DESC`
     );
   }
 
@@ -20,8 +20,8 @@ class PublicationManager extends AbstractManager {
 
   create(publication) {
     return this.connection.query(
-      `insert into ${this.table} (title, text, user_id) VALUES (?,?,?)`,
-      [publication.title, publication.text, publication.user_id]
+      `insert into ${this.table} (date, text, user_id) VALUES (now(),?,?)`,
+      [publication.text, publication.user_id]
     );
   }
 

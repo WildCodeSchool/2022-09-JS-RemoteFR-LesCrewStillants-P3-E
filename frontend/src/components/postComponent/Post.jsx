@@ -11,17 +11,10 @@ import eventIcon from "../../assets/images/event-icon.png";
 import photoIcon from "../../assets/images/photo-icon.png";
 
 function Post() {
-  /*   const [postText, setPostText] = useState("");
-  //  */
-  const [postMedia, setPostMedia] = useState({
-    picture: null,
-    pdf: null,
-    gif: null,
-    event: null,
-  });
-
-  const [userInfos, setUserInfos] = useState([]);
+  const [postText, setPostText] = useState("");
+  const [userInfos, setUserInfos] = useState("");
   const [userAvatar, setUserAvatar] = useState("");
+  const [date, setDate] = useState("");
 
   const token = jwtDecode(localStorage.getItem("token"));
 
@@ -45,31 +38,21 @@ function Post() {
     setModalIsOpen(false);
   };
 
-  // eslint-disable-next-line no-unused-vars
-  const handlePostMediaChange = (e) => {
-    setPostMedia({ ...postMedia, [e.target.name]: e.target.files[0] });
+  const handlePostText = (event) => {
+    setPostText(event.target.value);
+  };
+
+  const handleDate = () => {
+    setDate(new Date().toISOString());
   };
 
   // eslint-disable-next-line no-unused-vars
   const handlePublishPost = () => {
-    const postData = new FormData();
-    // eslint-disable-next-line no-undef
-    postData.append("text", postText);
-    postData.append("picture", postMedia.picture);
-    postData.append("pdf", postMedia.pdf);
-    postData.append("gif", postMedia.gif);
-    postData.append("event", postMedia.event);
-    fetch("/posts/create", {
-      method: "POST",
-      body: postData,
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.warn(data);
-      })
-      .catch((error) => {
-        console.warn(error);
-      });
+    axios.post(`${import.meta.env.VITE_BACKEND_URL}/publication`, {
+      text: postText,
+      date,
+      user_id: token.id,
+    });
   };
 
   return (
@@ -139,7 +122,11 @@ function Post() {
                 <span className="uppercase"> {`${userInfos.lastname}`}</span>
               </span>
             </div>
-            <textarea placeholder="Commencer un post" />
+            <textarea
+              name="postText"
+              onChange={handlePostText}
+              placeholder="Commencer un post"
+            />
             <div className="media-buttons-modal">
               {" "}
               <label>
@@ -184,7 +171,14 @@ function Post() {
               <button type="button" onClick={handleCloseModal}>
                 Fermer
               </button>
-              <button type="submit" onClick={handlePublishPost}>
+              <button
+                type="submit"
+                onClick={() => {
+                  handlePublishPost();
+                  handleDate();
+                  handleCloseModal();
+                }}
+              >
                 Publier
               </button>
             </div>

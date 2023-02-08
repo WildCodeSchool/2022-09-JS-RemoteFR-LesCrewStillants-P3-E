@@ -1,4 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import findDateDistanceStrict from "@services/dates/findDateDistanceStrict";
+import formatDate from "@services/dates/formatDate";
 import RightBar from "../components/rightBar/Rightbar";
 import LeftBar from "../components/leftBar/LeftBar";
 import PostBody from "../components/postbody/PostBody";
@@ -9,6 +12,14 @@ import "./Home.css";
 import Post from "../components/postComponent/Post";
 
 export default function Home() {
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    axios.get(`${import.meta.env.VITE_BACKEND_URL}/publication`).then((res) => {
+      setPosts(res.data);
+    });
+  }, []);
+
   return (
     <div>
       <Header />
@@ -19,24 +30,14 @@ export default function Home() {
         </div>
         <div className="middle">
           <Post />
-          <PostBody
-            name="Elie Partenay"
-            description="directeur admin"
-            message="Le fichier de prévention pour l’année 2023 est sorti. Il est nécessaire
-        que celui-ci soit à jour pour permettre une meilleure réactivité lors
-        d’un incident. Je compte sur vous pour vérifier et modifier les
-        informations si nécessaire"
-            date="6h"
-          />
-          <PostBody
-            name="Elie Partenay"
-            description="directeur admin"
-            message="Le fichier de prévention pour l’année 2023 est sorti. Il est nécessaire
-        que celui-ci soit à jour pour permettre une meilleure réactivité lors
-        d’un incident. Je compte sur vous pour vérifier et modifier les
-        informations si nécessaire"
-            date="6h"
-          />
+          {posts.map((post) => (
+            <PostBody
+              name={`${post.firstname} ${post.lastname}`}
+              description={post.fonction}
+              message={post.text}
+              date={findDateDistanceStrict(formatDate(post.date))}
+            />
+          ))}
           <div>
             <Comments currentUserId="1" />
           </div>
