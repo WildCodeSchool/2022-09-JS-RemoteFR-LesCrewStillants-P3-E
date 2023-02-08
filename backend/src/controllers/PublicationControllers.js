@@ -18,7 +18,6 @@ const browse = async (req, res) => {
   model.publication
     .findAllWithUser()
     .then(([rows]) => {
-      console.warn(rows);
       res.send(rows);
     })
     .catch((err) => {
@@ -31,11 +30,10 @@ const read = (req, res) => {
   model.publication
     .findById(req.params.id)
     .then(([rows]) => {
-      console.warn(rows);
       if (rows[0] == null) {
         res.sendStatus(404);
       } else {
-        res.send(rows[0]);
+        res.send(rows);
       }
     })
     .catch((err) => {

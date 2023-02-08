@@ -1,3 +1,5 @@
+/* eslint-disable camelcase */
+
 const AbstractManager = require("./AbstractManager");
 
 class PublicationManager extends AbstractManager {
@@ -11,10 +13,10 @@ class PublicationManager extends AbstractManager {
     );
   }
 
-  findById(id) {
+  findById(user_id) {
     return this.connection.query(
-      `select * from  ${this.table} as p JOIN user as u ON p.id = ? AND p.user_id = u.id`,
-      [id]
+      `select p.*, u.firstname, u.lastname, u.fonction from  ${this.table} as p JOIN user as u ON u.id = p.user_id AND p.user_id = ? ORDER BY p.id DESC`,
+      [user_id]
     );
   }
 

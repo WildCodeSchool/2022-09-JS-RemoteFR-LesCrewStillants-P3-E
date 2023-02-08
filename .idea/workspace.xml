@@ -6,11 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="79a19e80-827e-4750-b3ed-4bd0b46c05ff" name="Changes" comment="Remove localhost and replace with import env">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/controllers/PublicationControllers.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/controllers/PublicationControllers.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/models/PublicationManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/models/PublicationManager.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/models/UserManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/models/UserManager.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/postComponent/Post.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/postComponent/Post.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/profile/CardProfile/CardProfile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/profile/CardProfile/CardProfile.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/pages/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Home.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/profile/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/profile/Profile.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/profile/ProfileFake.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/profile/ProfileFake.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +94,7 @@
       <workItem from="1674807212341" duration="720000" />
       <workItem from="1675786548931" duration="702000" />
       <workItem from="1675847327436" duration="1022000" />
-      <workItem from="1675848375627" duration="4684000" />
+      <workItem from="1675848375627" duration="7900000" />
     </task>
     <servers />
   </component>

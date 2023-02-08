@@ -35,6 +35,7 @@ export default function Home() {
               name={`${post.firstname} ${post.lastname}`}
               description={post.fonction}
               message={post.text}
+              Img={post.avatar}
               date={findDateDistanceStrict(formatDate(post.date))}
             />
           ))}
