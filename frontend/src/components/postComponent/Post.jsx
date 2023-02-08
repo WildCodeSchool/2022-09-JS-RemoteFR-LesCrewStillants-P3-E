@@ -10,7 +10,7 @@ import pdfIcon from "../../assets/images/pdf-icon.png";
 import eventIcon from "../../assets/images/event-icon.png";
 import photoIcon from "../../assets/images/photo-icon.png";
 
-function Post() {
+function Post({ findPublication }) {
   const [postText, setPostText] = useState("");
   const [userInfos, setUserInfos] = useState("");
   const [userAvatar, setUserAvatar] = useState("");
@@ -48,11 +48,15 @@ function Post() {
 
   // eslint-disable-next-line no-unused-vars
   const handlePublishPost = () => {
-    axios.post(`${import.meta.env.VITE_BACKEND_URL}/publication`, {
-      text: postText,
-      date,
-      user_id: token.id,
-    });
+    axios
+      .post(`${import.meta.env.VITE_BACKEND_URL}/publication`, {
+        text: postText,
+        date,
+        user_id: token.id,
+      })
+      .then(() => {
+        findPublication();
+      });
   };
 
   return (
@@ -61,7 +65,9 @@ function Post() {
         <div className="user-info">
           <img
             className="avatar-post"
-            src={`${import.meta.env.VITE_BACKEND_URL}/avatar/${userAvatar}`}
+            src={`${import.meta.env.VITE_BACKEND_URL}/avatar/${
+              userAvatar || "nopicture.png"
+            }`}
             alt="Avatar"
           />
 
@@ -114,7 +120,9 @@ function Post() {
             <div className="user-modal-info">
               <img
                 className="modal-avatar-post"
-                src={`${import.meta.env.VITE_BACKEND_URL}/avatar/${userAvatar}`}
+                src={`${import.meta.env.VITE_BACKEND_URL}/avatar/${
+                  userAvatar || "nopicture.png"
+                }`}
                 alt="Avatar"
               />{" "}
               <span className="modal-user-name">

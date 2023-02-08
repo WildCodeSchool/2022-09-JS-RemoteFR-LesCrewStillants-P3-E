@@ -14,10 +14,14 @@ import Post from "../components/postComponent/Post";
 export default function Home() {
   const [posts, setPosts] = useState([]);
 
-  useEffect(() => {
+  const findPublication = () => {
     axios.get(`${import.meta.env.VITE_BACKEND_URL}/publication`).then((res) => {
       setPosts(res.data);
     });
+  };
+
+  useEffect(() => {
+    findPublication();
   }, []);
 
   return (
@@ -29,7 +33,7 @@ export default function Home() {
           <LeftBar />
         </div>
         <div className="middle">
-          <Post />
+          <Post findPublication={findPublication} />
           {posts.map((post) => (
             <PostBody
               name={`${post.firstname} ${post.lastname}`}

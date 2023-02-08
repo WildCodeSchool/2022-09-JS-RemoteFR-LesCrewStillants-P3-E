@@ -33,7 +33,7 @@ const login = async (req, res) => {
     const compare = await bcrypt.compare(password, user.password);
 
     if (!compare) {
-      return res.status(403).json({ error: "password incorect" });
+      return res.status(403).json({ error: "password incorrect" });
     }
     const token = generateToken({ id: user.id, mail: user.mail });
     return res.status(200).json({ token });
