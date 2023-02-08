@@ -21,7 +21,7 @@ export default function Members() {
       .then((response) => response.json())
       .then((data) => {
         setMemberList(data);
-        console.warn(data)
+        console.warn(data);
       });
   }, []);
 
@@ -72,7 +72,9 @@ export default function Members() {
                           {e.lastname}
                         </span>
                       </h2>
-                      <h3 className="italic text-lime-500">{e.fonction ? e.fonction : "Ouvrier"}</h3>
+                      <h3 className="italic text-lime-500">
+                        {e.fonction ? e.fonction : "Ouvrier"}
+                      </h3>
                       <p className="text-xs mt-1">{e.phone}</p>
                       <p className="text-xs mt-1">{e.mail}</p>
                     </div>
