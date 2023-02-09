@@ -43,11 +43,9 @@ function Navbar() {
           </div>
           Notifications
         </div>
-        <div className="navbarProfil">
-          <div className="profilAvatar">
-            <img src={avatarProfil} alt="Avatar Profil" /> Profil
-          </div>{" "}
-        </div>
+        <div className="profilAvatar">
+          <img src={avatarProfil} alt="Avatar Profil" /> Profil
+        </div>{" "}
       </div>
     </div>
   );

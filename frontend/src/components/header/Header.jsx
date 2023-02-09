@@ -25,6 +25,10 @@ function Header() {
       .catch((err) => console.warn(err));
   }, []);
 
+  const goToProfile = () => {
+    window.location = `/profile/${token.id}`;
+  };
+
   return (
     <div className="header">
       <div className="header_left">
@@ -40,7 +44,7 @@ function Header() {
           <HeaderOption Icon={SmsRoundedIcon} title="Messages" />
           <HeaderOption Icon={NotificationsRoundedIcon} title="Notification" />
         </div>
-        <button type="button" className="profile_btn">
+        <button onClick={goToProfile} type="button" className="profile_btn">
           <Avatar
             alt={userData.firstname}
             sx={{ width: 32, height: 32 }}
