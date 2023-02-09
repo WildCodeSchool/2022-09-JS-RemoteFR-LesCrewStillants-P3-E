@@ -3,9 +3,11 @@ import "@assets/css/login.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRightToBracket } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export default function LoginForm() {
   const [email, setEmail] = useState("");
+  const navigate = useNavigate();
 
   const changeEmail = (e) => {
     if (
@@ -28,9 +30,11 @@ export default function LoginForm() {
       })
       .then((res) => {
         localStorage.setItem("token", res.data.token);
+        navigate("/");
       })
       .catch((err) => console.warn(err));
   };
+
   return (
     <>
       <h1>Connexion</h1>

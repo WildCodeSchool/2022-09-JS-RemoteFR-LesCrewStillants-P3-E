@@ -5,8 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="79a19e80-827e-4750-b3ed-4bd0b46c05ff" name="Changes" comment="Remove localhost and replace with import env">
-      <change beforePath="$PROJECT_DIR$/backend/src/controllers/AuthControllers.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/controllers/AuthControllers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/models/UserManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/models/UserManager.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/header/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/leftBar/ItemBar.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/leftBar/ItemBar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/login/LoginForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/login/LoginForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/navbar/Navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/navbar/Navbar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/rightBar/Rightbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/rightBar/Rightbar.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
