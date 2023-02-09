@@ -24,7 +24,9 @@ function CardProfile() {
       <div className="card-profile-block">
         <div className="card-profile-firstname">{user.firstname}</div>
         <div className="card-profile-lastname">{user.lastname}</div>
-        <div className="card-profile-job">{user.fonction}</div>
+        <div className="card-profile-job">
+          {user.fonction ? user.fonction : "Ouvrier"}
+        </div>
         <div className="card-profile-email">{user.mail}</div>
         <div className="card-profile-phone">{user.phone}</div>
       </div>

@@ -12,14 +12,15 @@ import HeaderOption from "./HeaderOption";
 
 function Header() {
   const [userAvatar, setUserAvatar] = useState("");
+  const [userData, setUserData] = useState([]);
   const token = jwtDecode(localStorage.getItem("token"));
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5200/users/${token.id}`)
+      .get(`${import.meta.env.VITE_BACKEND_URL}/users/${token.id}`)
       .then((res) => {
-        console.warn(res.data);
         setUserAvatar(res.data.avatar);
+        setUserData(res.data);
       })
       .catch((err) => console.warn(err));
   }, []);
@@ -41,12 +42,12 @@ function Header() {
         </div>
         <button type="button" className="profile_btn">
           <Avatar
-            alt="Mustapha SAID"
+            alt={userData.firstname}
             sx={{ width: 32, height: 32 }}
-            src={`http://localhost:5200/avatar/${userAvatar}`}
+            src={`${import.meta.env.VITE_BACKEND_URL}/avatar/${userAvatar}`}
           />{" "}
-          Mustapha
         </button>
+        <span className="text-gray-600">{userData.firstname}</span>
       </div>
     </div>
   );
